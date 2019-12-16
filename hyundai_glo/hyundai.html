@@ -490,6 +490,7 @@
 			var gnb = document.querySelector(".m_nav")
 			var menubtn = document.querySelector(".gnb_button");
 			var mbclose = document.querySelector(".gnb_close");
+			const htmlEl = document.querySelector('html')
 
 			nav.addEventListener("mouseover", function () {
 				header.classList.add('on');
@@ -502,11 +503,13 @@
 			menubtn.addEventListener('click', function (e) {
 				e.preventDefault();
 				gnb.classList.add('on');
+				htmlEl.style.overflow = 'hidden';
 			});
 
 			mbclose.addEventListener('click', function (e) {
 				e.preventDefault();
 				gnb.classList.remove('on');
+				htmlEl.style.overflow = 'visible'
 			});
 			
 
@@ -545,14 +548,18 @@
 			// m_gnb
 			const mGnb = document.querySelector('.m_gnb')
 			const mGnbLis = document.querySelectorAll('.m_gnb > ul > li');
+			const showDrop = mGnb.querySelectorAll('.drop_menu');
 
 			for(let i = 0; i < mGnbLis.length; i++) {
 				mGnbLis[i].addEventListener('click', function(e){
 					e.preventDefault();
 					if(mGnbLis[i].classList.contains('active')){
 						mGnbLis[i].classList.remove('active');
+						showDrop[i].style.height = '0';
+
 					} else {
 						mGnbLis[i].classList.add('active');
+						showDrop[i].style.height = showDrop[i].scrollHeight + 'px';
 					}
 				})
 				

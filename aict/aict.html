@@ -169,6 +169,7 @@
                                 <a href=""><strong>연구센터&연구실</strong></a>
                                 <span>다음 세대를 위한 첨단과학의 산실로서 융합기술의 새로운 신화를 만들어갑니다.</span>
                             </div>
+                            <a href=""><img src="images/bg_plus2.png"></a>
                         </li>
 
                         <li>
@@ -177,6 +178,7 @@
                                 <a href=""><strong>공공융합플랫폼</strong></a>
                                 <span>공공분야의 빅데이터를 활용하여 사회문제 해결을 위한 기술 및 서비스를 개발 합니다.</span>
                             </div>
+                            <a href=""><img src="images/bg_plus2.png"></a>
                         </li>
 
                         <li>
@@ -185,6 +187,7 @@
                                 <a href=""><strong>산.학.연 사업</strong></a>
                                 <span>소통의 과학으로 대중과 호흡하고 국민 속으로 한걸음 가까이 다가갑니다.</span>
                             </div>
+                            <a href=""><img src="images/bg_plus2.png"></a>
                         </li>
                     </ul>
                 </div>
@@ -287,22 +290,27 @@
 
                         <div class="bottom">
                             <div class="bottom_wrap">
-                            <ul>
-                                <li><a href="">고객센터</a></li>
-                                <li><a href="">찾아오시는 길</a></li>
-                                <li><a href="">접수확인</a></li>
-                                <li><a href="">메일링 서비스</a></li>
-                                <li><a href="">모션캡쳐 스튜디오</a></li>
-                                <li><a href="">이메일주소무단수집거부</a></li>
-                                <li><a href="">개인정보처리방침</a></li>
-                                <li><a href="">영상정보처리기기 운영·관리 방침</a></li>
-                                <li><a href="">사이트맵</a></li>
-                            </ul>
-                            <p>(우) 16229 경기도 수원시 영통구 광교로 145(구:이의동 864-1) 차세대융합기술연구원</p>
-                            <p>TEL. 031-888-9114, 9115 | FAX. 031-888-9009 | 사업자등록번호: 135-82-12905 | 통신판매업신고: 제2013-수원영통-0318호</p>
-                            <p>COPYRIGHT ADVANCED INSTITUTE OF CONVERGENCE TECHNOLOGY ALL RIGHTS RESERVED.</p>
+                                <ul>
+                                    <li><a href="">고객센터</a></li>
+                                    <li><a href="">찾아오시는 길</a></li>
+                                    <li><a href="">접수확인</a></li>
+                                    <li><a href="">메일링 서비스</a></li>
+                                    <li><a href="">모션캡쳐 스튜디오</a></li>
+                                    <li><a href="">이메일주소무단수집거부</a></li>
+                                    <li><a href="">개인정보처리방침</a></li>
+                                    <li><a href="">영상정보처리기기 운영·관리 방침</a></li>
+                                    <li><a href="">사이트맵</a></li>
+                                </ul>
+                                <p>(우) 16229 경기도 수원시 영통구 광교로 145(구:이의동 864-1) 차세대융합기술연구원</p>
+                                <p>TEL. 031-888-9114, 9115 | FAX. 031-888-9009 | 사업자등록번호: 135-82-12905 | 통신판매업신고: 제2013-수원영통-0318호</p>
+                                <p>COPYRIGHT ADVANCED INSTITUTE OF CONVERGENCE TECHNOLOGY ALL RIGHTS RESERVED.</p>
 
                             <a href=""><img src="images/img_w_wa.jpg"></a>
+                            <ul class="logo_slide">
+                                <li><a href=""><img src="images/banner_gg.jpg"></a></li>
+                                <li><a href=""><img src="images/banner_msit.jpg"></a></li>
+                                <li><a href=""><img src="images/banner_snu.jpg"></a></li>
+                            </ul>
                         </div>
                         </div>
                     </div>
@@ -317,8 +325,20 @@
             $('.slide_wrap').bxSlider();
         });
 
+        var option = {
+            speed : 500,
+            auto : true,
+            pause : 2000,
+            autoControls : true,
+            maxSlide : 2,
+            slideWidth : 500,
+            slideMargin : 30,
+        }
         $(document).ready(function(){
-            $('.photo_slider > ul').bxSlider();
+            $('.photo_slider > ul').bxSlider(option);
+        });
+        $(document).ready(function(){
+            $('.logo_slide').bxSlider(option);
         });
     </script>
 </body>

@@ -95,7 +95,7 @@ nav > ul > li > a > span {display: inline-block;}
 .lang.on > a {color:black; background-color: white;}
 
 
-.m_header > .m_nav {position: absolute; top:0; left: 100%; width:100%; height:auto; background: white; overflow: hidden;}
+.m_header > .m_nav {position: absolute; top:0; left: 100%; width:100%; height:1000px; background: white; overflow: hidden;}
 .m_header > .m_nav > .top {background-color: #15245d; padding:10px 20px; position: relative;} 
 .m_header > .m_nav > .top a {color:white; position: relative; font-size:13px;}
 .m_header > .m_nav > .top a:first-child {margin-right:20px;}
@@ -109,19 +109,22 @@ nav > ul > li > a > span {display: inline-block;}
 .m_header > .m_nav > .m_gnb > ul > li  {display: block;}
 .m_header > .m_nav > .m_gnb > ul > li > a {display: block;
     padding:10px; margin-left:5px; background: url('../images/m_oneD_icon.png') no-repeat 98%; background-size: 8px; }
-.m_header > .m_nav > .m_gnb .drop_menu {display: none; background-color: #fafafa; padding:20px; margin-top:0; border-bottom:0.5px solid rgb(208, 208, 208); border-top:0.5px solid rgb(208, 208, 208); transition: all 0.3s ease;}
+
+.m_header > .m_nav > .m_gnb .drop_menu {
+    background-color: #fafafa; 
+    padding:0 20px; margin-top:0; border-bottom:0.5px solid rgb(208, 208, 208); 
+    border-top:0.5px solid rgb(208, 208, 208); 
+    transition: all 0.3s ease;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
 .m_header > .m_nav > .m_gnb .drop_menu > a:hover {color:black; font-weight: 400;}
+.m_header > .m_nav > .m_gnb .drop_menu > a:first-child {padding-top:8px;}
+.m_header > .m_nav > .m_gnb .drop_menu > a:last-child {padding-bottom:8px;}
 .m_header > .m_nav > .m_gnb > ul > li.active {display: block; background: url('../images/m_oneD_bg.gif') no-repeat 0 0;}
-.m_header > .m_nav > .m_gnb > ul > li.active .drop_menu {display:block; transition: all 0.3s ease;}
+.m_header > .m_nav > .m_gnb > ul > li.active .drop_menu {transition: all 0.3s ease; opacity: 1;}
 .m_header > .m_nav > .m_gnb > ul > li.active > a {color: #15245d; font-weight: bold;}
-
-
-
-
-
-
-
-
 
 .m_header > .m_nav > .bottom {padding: 10px 20px;}
 .m_header > .m_nav > .bottom > a {display: block; margin-bottom:10px; color:#555;}
