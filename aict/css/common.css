@@ -39,16 +39,16 @@ header {position: fixed; width:100%; height:90px; background-color: white; z-ind
 .header_wrap > .utill > a:nth-child(2) {
     background-color: #696e6a; color:white; 
     font-size:16px; padding:6px; display: inline-block; vertical-align: top;}
-.header_wrap > nav .drop_menu > ul {position: absolute; top:90px; right:0; left:0; width:33.333333%; margin:0 auto; border:1px solid #e4e4e4;}
-.header_wrap > nav .drop_menu > ul > li > ul {border:1px solid red; position: absolute; top:90px;}
-
+.drop_right {border:1px solid red; position: absolute; top:90px; right:0;}
 .all_menu {border:1px solid #e4e4e4; position: fixed; top: 90px; left:0; right:0; background: white; z-index: 1; display: none;}
 .all_menu > ul {max-width: 1200px; margin:0 auto;}
 .all_menu > ul > li {float: left; border-left:1px solid #e4e4e4; border-right:1px solid #e4e4e4; padding:20px; width:calc(160px - 3px); height:500px;}
 .all_menu > ul > li > a {font-size:17px;}
 .all_menu > ul > li > ul {margin-top:10px;}
 
-.header_bg {position: fixed; top:90px; left:0; right:0; background: #f6f6f6; height:400px; z-index: 2; border:1px solid #e4e4e4;}
+.drop_left {position: fixed; top:90px; left:0; right:0; background: #f6f6f6; height:400px; z-index: 2; border:1px solid #e4e4e4;}
+.drop_left > ul {border:1px solid red; display: inline-block;}
+/* .header_bg {position: fixed; top:90px; left:0; right:0; background: #f6f6f6; height:400px; z-index: 2; border:1px solid #e4e4e4;} */
 
 
 
