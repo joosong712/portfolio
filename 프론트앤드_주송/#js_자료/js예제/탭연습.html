@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {margin: 0; padding:0;}
+    li {list-style: none;}
+    .tabmenu {overflow: hidden;}
+    .tabmenu > li > a.on {background-color: red;}
+    .tabmenu > li > a {float: left; background-color: yellow; padding:10px; border:1px solid black;
+    width:100px;}
+    .tabcont .tab1, .tabcont .tab2 {border:2px solid black; padding:20px; display: none;}
+    .tabcont .tab1.on, .tabcont .tab2.on {display: block;}
+    </style>
+</head>
+<body>
+    <ul class="tabmenu">
+        <li><a href="#" class="tab1 on">서비스소개</a></li>
+        <li><a href="#" class="tab2">연혁</a></li>
+    </ul>
+    <div class="tabcont">
+        <div class="tab1 on">서비스소개</div>
+        <div class="tab2">연혁</div>
+    </div>
+</body>
+
+<script>
+    var aElems = document.querySelectorAll('.tabmenu a');
+    var divConts = document.querySelectorAll('.tabcont > div');
+    console.log(aElems);
+
+    for (var i = 0; i < aElems.length; i++) {
+        aElems[i].addEventListener('click', tab할일);
+    }
+
+    function tab할일() {
+        //다 지우고, this에 on 준다.
+        for (var i = 0; i < aElems.length; i++) {
+
+        //다 지우고, 
+            aElems[i].classList.remove('on');
+            divConts[i].classList.remove('on');
+
+        //내용에 on 주기
+            if (divConts[i].classList.contains(this.className) ) {
+                divConts[i].classList.add('on');
+            }
+        }
+        //탭에 on 주기
+        this.classList.add('on');
+
+    }
+
+</script>
+</html>

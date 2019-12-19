@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*reset 주석*/
+
+body {
+	font:normal 12px "애플고딕", AppleGothic, "돋움", dotum, Arial, Verdana, sans-serif;
+	line-height:1.3;
+	color:#666666;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+br	{letter-spacing: 0;}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol {list-style:none;}
+a:link, a:visited {color: #666666;text-decoration:none;}
+a:hover {color: #666666;text-decoration:underline;}
+em {font-style: normal;}
+span {font-size: 11px;}
+
+
+
+/*cast_game 주석*/
+.navercast {border:1px solid black; width: 593px; position: relative; letter-spacing: -1px;}
+.navercast > .cast_menu {border:1px solid red; height: 46px;}
+.navercast > .cast_game { padding: 15px 30px 6px 29px;}
+.navercast > .cast_setting {background-color: red;}
+
+.navercast > .cast_menu > ul { padding: 0 10px; }
+.navercast > .cast_menu > ul > a > li {float: left; border:1px solid lime;}
+
+.navercast > .cast_game > .game_hot {float: left; width: 255px; margin-bottom: 20px;}
+.navercast > .cast_game > .game_etc {width: 254px; float: right;}
+.navercast > .cast_game > .game_etc > li { overflow: hidden;}
+.navercast > .cast_game > .game_etc > li + li {margin-top: 14px;}
+.navercast > .cast_game > .game_etc > li > a > img {float: left; margin-right: 11px;}
+.navercast > .cast_game > .game_etc > li > a > strong {margin: 15px 0 4px; }
+.navercast > .cast_game > .game_etc > li > a > * {display: block;}
+
+.game_recomm { clear: both;}
+.game_recomm > h3 { line-height: 13px; margin-bottom: 9px;}
+.game_recomm > h3 > a {
+	padding-right: 8px; 
+	background: url('../images/arrow.gif') no-repeat right center;}
+.game_recomm > h3 > a > img { vertical-align: top;}
+.game_recomm > ul {overflow: hidden;}
+.game_recomm > ul > li {width: 120px; float: left;}
+.game_recomm > ul > li > a > * {display: block;}
+.game_recomm > ul > li > a > strong {margin: 10px 0 2px;}
+.game_recomm > ul > li + li  {margin-left: 18px;}
+
+.navercast > .cast_game > .cast_more {padding-top: 35px;}
+.navercast > .cast_game > .cast_more > img { float: left; margin-right: 8px;}
+.navercast > .cast_game > .cast_more > ul > a > li { display: inline; }
+
+.navercast > .cast_game > .cast_setting {}
+.navercast > .cast_game > .cast_setting > .page { position: absolute; bottom: 0; right: 0; }
+
+
+
+/*cast_car*/
+.navercast {height: 494px;}
+.cast_tab {height: 44px; border:1px solid black;}
+.cast_car {padding: 15px 30px 4px 29px;}
+.car_hot {margin-right: 20px; float: left; width: 255px}
+.car_etc {width: 254px; overflow: hidden;}
+.car_etc > li {overflow: hidden;}
+.car_etc > li + li {margin-top: 12px;}
+.car_etc > li > a > * { display: block;}
+.car_etc > li > a > img {float: left; margin-right: 13px; width: 75px; height: 50px;}
+.car_etc > li > a > strong {margin-top: 2px; margin-bottom: 5px;}
+.car_etc > li > a > span {line-height: 13px;}
+
+.car_technews {margin-top: 19px; overflow: hidden;}
+.car_technews > h3 { margin-bottom: 9px; }
+.car_technews > ul {}
+.car_technews > ul > li {width:119px; float: left;}
+.car_technews > ul > li + li { margin-left: 18px; }
+.car_technews > ul > li > a > img {width: 120px; height: 80px; border:1px solid #999;}
+.car_technews > ul > li > a > * {display: block;}
+.car_technews > ul > li > a > strong {margin: 11px 0 4px;}
+
+.sbj_more { margin-top: 32px; margin-bottom: 7px; overflow: hidden;}
+.sbj_more > h3 { float: left; margin-right: 10px;}
+.sbj_more > ul {float: left;}
+.sbj_more > ul > li { float:left; padding: 0 6px 0 7px;
+background:url('../images/line.gif') no-repeat 0 2px;}
+.sbj_more > ul > li:first-child {background-image: none; padding: 0 6px 0 0 ;}
+
+
+.navercast > .cast_setting { background-color: transparent; }
+.cast_setting {padding-left: 29px; margin-bottom: 9px; border:1px solid lime; position: relative;}
+.cast_setting > a.choice {
+	background: url(../images/set.gif) no-repeat left; 
+	padding-left: 22px; padding-top: 3px; display: inline-block;}
+
+.cast_setting > .page { position: absolute; top: 0px; right: 15px;}
+.cast_setting > .page > * {float: left; }
+.cast_setting > .page > span {font-size:10px; font-weight: bold; margin:2px 8px 0 0; font-family: tahom;}
+.cast_setting > .page > a {background: url('../images/page.gif') no-repeat ;
+ text-indent: -999px; overflow: hidden; height: 19px; }
+.cast_setting > .page > .prev {width: 20px;}
+.cast_setting > .page > .next {width: 21px; background-position: -20px 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

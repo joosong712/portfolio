@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>이벤트</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+$(document).ready( function(){
+    var 옵션 = {
+        mode : 'horizontal',
+        speed : 500,
+        // infiniteLoop : false,
+        auto : true,
+        pause : 2000,
+        autoControls : true,
+        maxSlide : 2,
+        // minSlide : 2,
+        slideWidth : 500,
+        slideMargin : 30,
+        }
+    $('.song').bxSlider( 옵션 );
+} );
+
+</script>
+<style>
+* {margin:0; padding: 0;}
+li {list-style: none}
+
+div.bx-wrapper {border:none; box-shadow: none;}
+ul#photo_list {
+	border:2px solid lime; 
+	display: inline-block; 
+	padding: 20px;
+}
+ul#photo_list > li {
+	border:1px solid orange;  
+	float:left; 
+	padding: 20px; 
+	position: relative;
+}
+ul#photo_list > li > a {
+	border:1px solid black;
+	padding: 10px;
+}
+ul#photo_list ul {
+	/* opacity: 0; */
+    display: block;
+    height: 0;
+    overflow: hidden;
+	background-color: yellow; 
+	width: 100px;
+	z-index: 100;
+	border:1px solid lime;
+	position: absolute; 
+	/* 포지션층으로 띄우지 않으면 visibility에서 자기구역을 미리 그려놓기 때문에 넓이가 포함이 된다 */
+	top:40px; 
+	left:0;
+	transition: all 1s ease;
+}
+ul#photo_list ul.opened {
+    /* display: block; */
+    /* max-height: 200px; */
+}
+
+ul#photo_list ul > li {
+	border:1px solid orange;
+	padding: 5px;
+}
+ul#photo_list ul > li > a {
+	text-decoration: none;
+	border:1px solid black;
+}
+body {padding:30px;}
+</style>
+</head>
+<body>
+
+<ul class="song">
+    <li><img src="http://placehold.it/600x200"></li>
+    <li><img src="http://placehold.it/600x200"></li>
+    <li><img src="http://placehold.it/600x200"></li>
+    <li><img src="http://placehold.it/600x200"></li>
+</ul>
+
+
+
+<ul id="photo_list">
+	<li>
+		<a href="">건물</a>
+		<ul>
+			<li><a href="">남산타워</a></li>
+			<li><a href="">63빌딩</a></li>
+			<li><a href="">63빌딩</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">커피</a>
+			<ul>
+				<li><a href="">아메리카노</a></li>
+				<li><a href="">카페라테</a></li>
+				<li><a href="">카페라테</a></li>
+				<li><a href="">카페라테</a></li>
+				<li><a href="">카페라테</a></li>
+			</ul>
+		
+	</li>
+	<li>
+		<a href="">불꽃놀이</a>
+		<ul>
+			<li><a href="">한강축제</a></li>
+			<li><a href="">금강축제</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">장미</a>
+
+	</li>
+</ul>
+</body>
+
+<script>
+
+
+클릭메뉴();
+
+function 클릭메뉴() {
+    
+    var click요소들 = document.querySelectorAll("#photo_list > li > a");
+    var 하위메뉴들 = document.querySelectorAll("#photo_list ul");
+
+    for (var i = 0; i < click요소들.length; i++) {
+        click요소들[i].addEventListener("click", clickMenu);
+    }
+
+    function clickMenu(e) {
+		e.preventDefault();
+		var subMenu = e.target.parentNode.querySelector('ul');
+		if (subMenu) {
+			if (subMenu.className === 'opened') {
+				//닫을때
+                subMenu.className = '';
+                subMenu.style.height = '0';
+			} else {
+                //열릴때
+                subMenu.className = 'opened';
+                subMenu.style.height = subMenu.scrollHeight + 'px';
+				//넘치는 높이를 자동으로 알맞게 가져와 지정해준다
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+
+</script>
+</html>
+
+
+
+
+
+
+

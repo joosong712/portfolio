@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Wired</title>
+<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+<style type="text/css">
+/* reset */
+.member {border:1px solid blue; background-color: beige; padding: 30px;}
+.member legend {margin-left: 10px;}
+.basic {border:1px solid black; border-left:1px solid transparent;margin-bottom: 50px; padding: 20px ;}
+.basic > div{margin-top: 10px; }
+.member div > strong {display: inline-block; width: 70px; }
+.member em {color: tomato;}
+.sub {border:1px solid black; border-left:1px solid transparent;padding: 20px;}
+.sub textarea {width: 300px; margin-top: 10px;}
+.button {text-align: right; margin-top: 10px;}
+</style>
+</head>
+
+<body>
+
+<form>
+    <div class="member">
+    <fieldset class="basic">
+        <legend>기본정보</legend>
+            <em>*표시는 반드시 입력해주세요</em>
+            <div>
+                <strong>
+                    *<label for="m_id">
+                        아이디
+                    </label>
+                </strong>
+                    <input type="text" id="m_id">
+            </div>
+
+            <div>
+                <strong>
+                    *<label for="m_pw">
+                        패스워드
+                    </label>
+                </strong>
+                     <input type="password" id="m_pw">
+                     <em>대문자, 소문자, 숫자 8자리 이상</em>
+            </div>  
+            
+            <div>
+                <strong>
+                        *<label for="m_num">
+                        전화번호
+                    </label>
+                </strong>
+                    <input type="text" id="m_num" placeholder="예)01022222222">
+                    <em>"-" 표시는 제외</em>
+            </div>   
+            
+            <div>
+                <strong>*연령대</strong>
+                    <label><input type="radio" id="m_age_110"/>1세~10세</label>
+                    <label><input type="radio" id="m_age_1020"/>10세~20세</label>
+                    <label><input type="radio" id="m_age_2030"/>20세~30세</label>
+            </div>   
+            
+            <div>
+                <strong>*좋아하는일</strong>
+                    <label><input type="checkbox" id="m_fav1"/>써보기</label>
+                    <label><input type="checkbox" id="m_fav2"/>공놀이</label>
+                    <label><input type="checkbox" id="m_fav3"/>공부하기</label>
+            </div> 
+
+            <div>
+                <strong>*사진첨부</strong>
+                    <input type="file" title="사진첨부"/>
+            </div>
+        
+    </fieldset>
+
+    <fieldset class="sub">
+        <legend>부가정보</legend>
+        <div>
+            <strong>살고있는 곳</strong>
+            <select title="나라와 도시선택">
+                <option selected="select">위치를 선택해 주세요</option>
+                <option>미국</option>
+                <optgroup label="한국">
+                    <option>경기도</option>
+                    <option>서울특별시</option>
+                    <option>부산광역시</option>
+                </optgroup>
+                <option>일본</option>
+                <option>중국</option>
+            </select>
+            <select size="3" title="지역선택">
+                <option>노원구</option>
+                <option>강북구</option>
+                <option>서초구</option>
+            </select>
+            </div>
+        <div>
+            <textarea placeholder="남기고 싶은 말을 적어주세요" style rows="10"></textarea>
+        </div>
+    </fieldset>
+
+    <div class="button">
+    <button type="button">이전</button>
+    <button type="button">확인</button>
+    <input type="submit" value="등록"/>
+    <input type="reset" value="초기화"/>
+    </div>
+</form>
+    </div>
+</body>
+</html>

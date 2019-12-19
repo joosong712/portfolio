@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>이벤트</title>
+
+<style>
+* {margin:0; padding: 0;}
+li {list-style: none}
+ul#photo_list {
+	border:2px solid lime; 
+	display: inline-block; 
+	padding: 20px;
+}
+ul#photo_list > li {
+	border:1px solid orange;  
+	float:left; 
+	padding: 20px; 
+	position: relative;
+}
+ul#photo_list > li > a {
+	border:1px solid black;
+	padding: 10px;
+}
+ul#photo_list ul {
+	display: none;
+	background-color: yellow; 
+	position: absolute; 
+	top:40px; 
+	left:0; 
+	width: 100px;
+	padding: 10px;
+	z-index: 100;
+	border:1px solid lime;
+}
+ul#photo_list ul.opened {
+	display: block
+}
+ul#photo_list ul > li {
+	border:1px solid orange;
+	padding: 5px;
+}
+ul#photo_list ul > li > a {
+	text-decoration: none;
+	border:1px solid black;
+}
+body {padding:30px;}
+</style>
+</head>
+<body>
+
+<ul id="photo_list">
+	<li>
+		<a href="">건물</a>
+		<ul>
+			<li><a href="">남산타워</a></li>
+			<li><a href="">63빌딩</a></li>
+			<li><a href="">63빌딩</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">커피</a>
+		<ul>
+			<li><a href="">아메리카노</a></li>
+			<li><a href="">카페라테</a></li>
+			<li><a href="">카페라테</a></li>
+			<li><a href="">카페라테</a></li>
+			<li><a href="">카페라테</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">불꽃놀이</a>
+		<ul>
+			<li><a href="">한강축제</a></li>
+			<li><a href="">금강축제</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">장미</a>
+
+	</li>
+</ul>
+</body>
+
+<script>
+overMenu()
+
+function overMenu () {
+    var photo = document.querySelector('#photo_list');
+    var lis = document.querySelectorAll('#photo_list > li');
+
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].addEventListener('mouseenter', enterWork);
+        lis[i].addEventListener('mouseleave', leaveWork);
+    }
+
+    function enterWork(e) {
+        console.log(e.target.tagName);
+        var submenu = e.target.querySelector('ul');
+
+        if ( !submenu) return;
+        submenu.className = 'opened';
+    }
+
+    function leaveWork(e) {
+        var submenu = e.target.querySelector('ul');
+        if (!submenu) return;
+        submenu.className = '';
+    }
+}
+
+//     photo.addEventListener('mouseover', overWork);
+//     photo.addEventListener('mouseout', outWork);
+
+//     var 열렸던UL;
+
+//     function overWork(e) {
+//         // a만 걸러낸다.
+//         if (e.target.tagName !== 'A') return
+//         console.log(e.target.tagName);
+
+//         // 하위메뉴 ul을 담는다.
+//         var 하위메뉴 = e.target.parentNode.querySelector('ul');
+
+//         // 하위메뉴에 ul이 있으면 클래스 이름을 준다.
+//         if (하위메뉴) {
+//             하위메뉴.className = 'opened';
+//             열렸던UL = 하위메뉴;
+//         } 
+//     }
+
+//     function outWork(e) {
+//         if (열렸던UL === undefined) return
+//         console.log(e.target.tagName);
+//         // var 하위메뉴 = e.target.parentNode.querySelector('ul');
+//         if ( !isUl(열렸던UL, e.relatedTarget) ) {
+//             열렸던UL.className = '';
+//         } 
+        
+//         function isUl(열렸던UL, 옮겨간곳) {
+//             while ( 옮겨간곳.tagName !== 'HTML') {
+//                 if (열렸던UL == 옮겨간곳) {
+//                     return true;
+//                 }
+//                 옮겨간곳 = 옮겨간곳.parentNode;
+//             } 
+//             return false;
+//         }
+//     }
+
+// }
+
+
+</script>
+</html>
+
+
+
+
+
+
+

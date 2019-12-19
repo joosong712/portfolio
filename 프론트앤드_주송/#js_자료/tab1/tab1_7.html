@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>hello world!</title>
+<style>
+* {margin:0; padding:0}
+li {list-style: none}
+body {padding:50px;}
+
+.wrap {
+	width:90.196078%; /* 920 / 1020 */
+	margin:0 auto; 
+	background-color:lime; 
+	height: 500px;
+}
+.tab_menu {
+	border:2px solid black; 
+	width:54.130435%; /* 498 / 920 */
+	margin:0 auto;
+	overflow: hidden;
+	min-width: 400px;
+}
+.tab_menu > li > a {
+	position: relative;
+	float:left; 
+	width: calc( (100% - 8px) / 5) ; /* 98 / 498 */
+	background-color: #999; 
+	line-height: 50px; 
+	text-align: center;
+	color:white;
+	text-decoration-line: none;
+}
+.tab_menu > li.on > a {
+	background-color:blue;
+}
+.tab_menu > li + li > a {
+	margin-left:2px;
+}
+.tab_content > div {
+	display: none;
+	margin:20px;
+	padding:20px;
+	background-color:blue;
+	color:white;
+	font-size:18px;
+}
+.tab_content > div.on {
+	display: block;
+	height: 300px;
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+	<ul class="tab_menu">
+		<li class="on"><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+	<div class="tab_content">
+		<div class="on">학교 내용</div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+<script>
+// * onclick 이벤트리스트너를 이용하세요.
+// * http://www.json-generator.com/api/json/get/ceFOzWDyEO?indent=4를 사용하세요.
+// 7. 탭이름과 탭내용을 json파일에 있는 것으로 만드시오.
+
+
+// 데이터 준비
+const 요청URL = 'http://www.json-generator.com/api/json/get/bUrxlWydFe?indent=2';
+const 요청장치 = new XMLHttpRequest();
+요청장치.open('GET', 요청URL);
+요청장치.responseType = 'json';
+요청장치.send();
+요청장치.onload = function() {
+	const 탭메뉴json = 요청장치.response;
+	tabmenu(탭메뉴json);
+}
+// 노드 준비
+
+function tabmenu(tabData) {
+	console.log(tabData);
+	
+	var tabMenu = document.querySelector(".tab_menu");
+	var tabMenuLis = tabMenu.querySelectorAll("li");
+	var tabContentDivs = document.querySelectorAll(".tab_content > div");
+
+	if (tabMenuLis.length !== tabContentDivs.length) return;
+	if (!tabData) return;
+
+	for (let i = 0 ; i < tabMenuLis.length; i++) {
+		//숫자 넣기
+		tabMenuLis[i].num = i;
+		//초기 글 셋팅
+		var dataText = 요청장치.response.tabItems[i].itemName;
+		var dataInfo = 요청장치.response.tabItems[i].itemContent;
+		tabMenuLis[i].children[0].textContent = dataText;
+		tabContentDivs[i].textContent = dataInfo;
+		tabMenuLis[i].addEventListener('click', 데이터받기);
+
+		if (tabMenuLis[i].classList.contains('on')) {
+			let currentColor = 요청장치.response.tabItems[i].itemColor
+			tabMenuLis[i].children[0].style.backgroundColor = currentColor;
+			tabContentDivs[i].style.backgroundColor = currentColor;
+		}
+	}
+	function 데이터받기(e) {
+		e.preventDefault();
+		for (let i = 0 ; i < tabMenuLis.length; i++) {
+			tabMenuLis[i].classList.remove('on');
+			tabMenuLis[i].children[0].style.backgroundColor = '';
+			tabContentDivs[i].classList.remove('on');
+			tabContentDivs[i].style.backgroundColor = '';
+		}
+
+		let currentNum = e.target.parentNode.num;
+		let currentColor = 요청장치.response.tabItems[currentNum].itemColor;
+		tabMenuLis[currentNum].classList.add('on');
+		tabMenuLis[currentNum].children[0].style.backgroundColor = currentColor;
+		tabContentDivs[currentNum].classList.add('on');
+		tabContentDivs[currentNum].style.backgroundColor = currentColor;
+
+	}
+}
+// 확인
+
+// 코드
+
+
+
+</script>
+</body>
+</html>

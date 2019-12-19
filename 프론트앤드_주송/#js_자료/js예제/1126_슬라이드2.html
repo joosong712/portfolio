@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+
+<style>
+.slider > li > div {height: 200px;}
+</style>
+
+<script>
+    
+
+
+    $(document).ready(function() {
+
+        var sliderLis = document.querySelectorAll('.slider > li');
+        var songSlider = $('.slider').bxSlider();
+        var winSize = window.innerWidth;
+
+        //창넓이
+        window.addEventListener('resize', function(){
+            winSize = window.innerWidth;
+            console.log(winSize);
+            슬라이더셋팅();
+            
+        });
+
+
+        //판단해서 옵션셋팅
+        function 슬라이더셋팅(){     
+            if (winSize > 800) {
+                console.log('a');
+                songSlider.reloadSlider({
+                    onSlideBefore: function(){
+                        onSlideWork(this.getCurrentSlide());
+            }
+        });
+        }   else {
+            console.log('b');
+            songSlider.reloadSlider({
+                minSlides : 3,
+                maxSlides : 3,
+                slideWidth: 300,
+                slideMarget: 10
+            })
+        }
+        }
+
+        //필요한 일들
+        function onSlideWork(num) {
+                //슬라이드 숫자
+                var bgColor = sliderLis[num].dataset.color;
+                //data color를 가져옴
+
+                if (bgColor === 'white') {
+                    document.body.style.backgroundColor = 'red'
+                }  else {
+                    document.body.style.backgroundColor = 'blue'
+                }
+        }
+    })
+</script>
+
+
+<body>
+    <ul class="slider">
+        <li data-color="white"><div>0</div></li>
+        <li data-color="black"><div>1</div></li>
+        <li data-color="white"><div>2</div></li>
+        <li data-color="black"><div>3</div></li>
+        <li data-color="white"><div>4</div></li>
+        <li data-color="black"><div>5</div></li>
+    </ul>
+</body>
+</html>

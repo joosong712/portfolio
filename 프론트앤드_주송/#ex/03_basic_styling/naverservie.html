@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>네이버서비스</title>
+<meta name="robots" content="all" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+<style type="text/css">
+	.service {
+		border: 2px solid black;
+		padding: 20px;
+		width: 400px;
+	}
+
+	.service > h2 {
+		font-size: 24px;
+		color: black;
+	}
+
+	.service > .serv_item {
+		border: 4px solid gray;
+		padding: 20px;
+		margin-top: 15px;
+	}
+
+	.service + div + div {
+		margin-top: 15px;
+	}
+
+	.service > :first-child + .serv_item {
+		margin-top: 0;
+	}
+
+	.service > .serv_item.best {
+		border: 4px solid blue;
+	}
+
+	.service > .serv_item.low {
+		border: 4px solid #e4e4e4;
+	}
+
+	.service > .serv_item > h3 {
+		color: blue;
+	}
+
+	.service > .serv_item > h3, .service > .serv_item > p { 
+		background-color: lime;
+	}
+
+	.service > .serv_item[class^="se"] {
+		border:2px solid red;
+	}
+
+	.service > .serv_item:nth-child(2) {
+		background-color: blue;
+	}
+
+	.service > .serv_item:nth-child(3) {
+		background-color: yellow;
+	}	
+
+	.service > .serv_item > p::before {
+		content: '안녕하세요';
+		border: 1px solid black;
+		display: block;
+	}
+
+	.service > .serv_item > p::after {
+		content: '바이';
+		border: 1px solid black;
+		display: block;
+	}
+
+	input[type="text"]:focus {
+		background-color: green;
+	}
+
+	a:link { 
+		color: pink;
+		text-decoration-line: none;
+	}
+
+	a:visited {
+		color: red;
+		text-decoration-line: underline;
+	}
+
+	a:active {
+		color: green;
+	}
+</style>
+<script type="text/javascript" src=""></script>
+</head>
+<body>
+	<input type="text">
+	<a href="http://song.co.kr">aaaa</a>
+	<a href="http://song.com">bbbb</a>
+	<a href="http://song.or.kr">cccc</a>
+<div class="service">
+<h2>네이버서비스</h2>
+<div class="serv_item">
+	<h3 title="서비스설명">네이버 캐스트</h3>		
+	<p>우리가 일상생활에서 환경을 위해 할
+       수 있는 가장 손쉽고 간편한 방법은 무엇이
+       있을까? 아마도 전력을 아껴 쓰는 일일 것
+       이다. <span>어쩌면 우리는 멀지 않은 미
+       래에 어둠 컴컴한 도시 속에서 살아야 할지
+       도 모른다.</span>
+       </p> 
+</div>
+<div class="serv_item best">
+	<h3>오픈 캐스트</h3>		
+	<p>스티커의 디자인이 참 독특하다. 전력    
+       이 생산되는 과정을 보여주는 스티커, 전력 
+       소비로 인한 환경 오염을 노골적으로 보여
+       주는 스티커 등 다양하다. </p>
+</div>
+<div class="serv_item low">
+	<h3>네이버 캐스트</h3>		
+	<p>우리가 일상생활에서 환경을 위해 할
+       수 있는 가장 손쉽고 간편한 방법은 무엇이
+       있을까? 아마도 전력을 아껴 쓰는 일일 것
+       이다. <span>어쩌면 우리는 멀지 않은 미
+       래에 어둠 컴컴한 도시 속에서 살아야 할지
+       도 모른다.</span>
+       </p> 
+</div>
+<div class="serv_item">
+	<h3>오픈 캐스트</h3>		
+	<p>스티커의 디자인이 참 독특하다. 전력    
+       이 생산되는 과정을 보여주는 스티커, 전력 
+       소비로 인한 환경 오염을 노골적으로 보여
+       주는 스티커 등 다양하다. </p>
+</div>
+</div>
+</body>
+</html>

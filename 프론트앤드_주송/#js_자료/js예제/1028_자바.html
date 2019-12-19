@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    li {background: yellow;}
+    li > a {color: blue}
+    </style>
+</head>
+<body>
+    <div class="t_school">0</div>
+    <div class="a_school">1</div>
+    <div class="a_school">2</div>
+    <div class="a_school">3</div>
+    <div class="a_school">4</div>
+    <div class="a_school">5</div>
+    <div class="a_school">6</div>
+    <div class="a_school">7</div>
+    <div class="a_school">8</div>
+
+    <h1>0</h1>
+    <button class="one_up">1씩 증가</button>
+    <button>사람추가</button>
+
+    <button class="menu_add">메뉴등록</button>
+    <button class="menu_order">주문하기</button>
+
+    <h1>주송</h1>
+
+    <h2>구구단</h2>
+    <button class="num">구구단 질문</button>
+
+    <ul class="tabmenu" id="song">
+        <li><a href="" class="active">서비스소개</a></li>
+        <li><a href="">연혁</a></li>
+    </ul>
+
+    <div class="tab1">서비스소개</div>
+    <div class="tab2">연혁</div>
+</body>
+<script>
+
+// var divEl = document.querySelector('.t_school');
+
+// var b = console.log(divEl.className);
+
+// console.log(divEl.className);
+
+// var 나뉜값 = divEl.className.split('_');
+// var 나뉜값2 = divEl.className.substring(2, 8);
+// var 나뉜값3 = divEl.className.substr(2, 6);
+// console.log(divEl.className.length);
+
+// var 클래스이름1 = "ㅁㄴㅇㄹㅁㄴㅇㄹt_school";
+// var 클래스이름2 = "ct_school";
+
+// var 값 = 클래스이름1.substr(클래스이름1.length - 6, 6);
+// console.log(값);
+
+// var 값 = 클래스이름1.substr(클래스이름1.indexOf('_')+1 , 6);
+
+// console.log(값)
+
+// if (값 === 2) {
+//     console.log(값);
+// }
+
+
+// var 송 = true;
+// var 여자 = 1;
+
+// if (송) {
+//     console.log("송은 여자입니다.")
+// }
+
+// var 재산;
+// // null 25
+// console.log(재산);
+
+// var 재산 = false;
+// if (재산) {
+// }
+
+// var 송;
+// var 주 = {
+//     나이:25, 
+//     키:160
+// };
+// 송 = 주;
+// 송.나이 = 30;
+
+// console.log(주.나이);
+
+// var a = 1;
+// var b = 1;
+
+// console.log(a === b);
+
+// var a = {open:10};
+// var b = {open:10};
+
+// console.log(a === b);
+
+
+// document.querySelector('.a');
+// var a = {
+//     open: function() {console.log('a객체')}
+// };
+// a.open;
+
+// var a = {
+//     b:{
+//         c:'song',
+//         h:'123'
+//     },
+//     k:{
+
+//     },
+//     j:{
+        
+//     }
+// };
+// console.log(a.b.c);
+
+// var song = 2;
+// var f = {e:1};
+// var a = {
+//     b: {
+//         c:'song',
+//         w:f
+//     },
+//     k:'ssong',
+//     j:'ttttt'
+// };
+
+// if (song === 2) {
+//     a.b.w.e = 2 ;
+//     a.b.w.action = 3;
+// }
+
+// var 상태 = '좋음';
+// var 사람
+
+// if (상태 === '좋음') {
+//     사람 = 'w'
+//     console.log(a.b[사람]);
+// }
+
+// if (상태 === '나쁨') {
+//     사람 = 'c'
+//     console.log(a.b[사람]);
+// }
+
+// var 누구를 = "주송";
+// var 특기 = {}
+// 특기[누구를 + "가르치기"] = "거의매일";
+// 특기["배우기"] = "코드";
+
+// var 출석 = '주송'
+// var 수업 = {};
+// 수업[출석 + '성적'] = 10;
+// console.log(출석 + ' 안녕하세요.');
+
+// var 출석 = '송송'
+// var 수업 = {
+//     주송 : 10,
+//     주주 : 20,
+//     송송 : 30
+// }
+// console.log(수업[출석] + '점입니다.')
+
+// 일반객체
+// var radio = {
+//     안테나 : '신호감지',
+//     배터리 : '전원공급',
+//     스위치 : '켜고끄기',
+//     만들어진날 : 1980,
+//     소유주 : '정을수'
+// }
+
+// console.log('라디오는 ' + radio.만들어진날 + '년에 만들어졌으며,' + radio.소유주 + '가 가지고 있습니다');
+
+// console.log('라디오는 ' + radio.안테나 + '해서 작동하는 기계로 ' + radio.만들어진날 + '년에 ' + radio.소유주 + '에 의해서 만들어졌고, ' + radio.배터리 + '는 배터리입니다.')
+
+// 배열객체 
+// 진짜배열
+// var 사람 = 'j';
+// var 취미 = ['테니스', 'js', '인공지능'];
+// var i = 취미.length;
+
+// 취미[i] = '자전거';
+// console.log(typeof 취미);
+// console.log(Array.isArray(취미));
+
+// var divs = document.querySelectorAll('div');
+// console.log(Array.isArray(divs));
+// // divs[2].className = "k_school";
+// // querySelectior은 가짜배열
+
+// var 배우 = ['송강호', '유재석', {a:'b', c:'d'}, '유재석', '유재석', '강남길', ['나무', '잎',['씨앗', '열매']]];
+
+// var 방송 = {뉴스:'7시', 드라마:'8시', 예능:{주말:'전참시', 평일:'웃찾사'}}
+
+// console.log(배우, 방송);
+
+// console.log(방송.예능.주말);
+// console.log(방송['예능']['주말']);
+// console.log(배우[배우.length-1][0]);
+// console.log(배우[배우.length-1][2][0]);
+// console.log(배우[2].c);
+
+//------------------------------------------------------------10월 30일
+
+// var 멤버 = {
+//     멤버1 : "정송이",
+//     멤버2 : "정강이",
+//     멤버3 : "김달식",
+//     멤버4 : "송강호",
+//     멤버5 : ["유호성", "서강서", "김이례"],
+//     멤버6 : "김이해",
+//     멤버7 : "원미연",
+//     멤버8 : "강동원",
+// };
+
+// alert(멤버.멤버5[1])
+
+// var 멤버 = ['정송이', '정강이', '김달식', '송강호', ['유호성', '서강서', '김이례'], '김이해', '원미연', '강동원'];
+// alert(멤버[4][1]);
+// 멤버.splice(2, 멤버.length-2);
+// console.log( 멤버.indexOf("원미연"));
+
+// 멤버.forEach( //배열 다 가져오기
+//     function(item) {
+//         console.log(item + 'ok')
+//     }
+// );
+
+// console.log(멤버);
+
+// var 버튼 = document.querySelector("button");
+
+
+// 사람추가하기();
+
+// function 사람추가하기() { //(a)에 들어가는 함수 : 인자
+//     멤버.push('song');
+//     console.log(멤버);
+// };
+
+// 버튼.onclick = 사람추가하기;
+
+// function 사람추가하기() { ****선언형 방식*******
+//     // 멤버.pop(); //완전 지우는 방법
+//     var targetName = prompt('누구부터 넣어 줄까요?');
+//     멤버.unshift(targetName);
+//     // 멤버[멤버.length] = targetName;
+//     // 멤버.push(targetName);
+//     console.log(멤버);
+// };
+
+// var 사람추가하기 = function() *****리터럴 방식******  선언 - 실행 - 선언 - 실행
+
+// var targetName = prompt('누구부터 넣어 줄까요?');
+
+// var targetNum = 멤버.indexOf(targetName);
+
+// 멤버.splice (targetNum, 멤버.length - targetNum);
+
+// var 클론 = 멤버;
+// var 클론 = 멤버.slice()
+// 멤버.splice (0,1);
+// console.log(클론);
+
+
+// 멤버[멤버.length] = targetName;
+// 멤버.push(targetName);
+// console.log(멤버);
+
+
+
+
+// ------------------------------------------------------------11월 1일
+//메인루틴
+// var age = 25;
+// var result = 사람추가하기(age);
+
+// //함수:서브루틴
+// function 사람추가하기(a) {
+//     age = age + 1;
+//     return age + a;
+// };
+
+// var target = document.querySelector('div');
+
+// var a = grandMom();
+
+// function grandMom() {
+//     return mother();
+
+//     function mother() {
+//         return son();
+
+//         function son() {
+//             return 'song'
+//         }
+//     }
+// };
+
+
+// var result = grandMom( {a:1});
+// var abb = grandMom( ['a','b']);
+// // var j = grandMom(3+4+5)
+
+// function grandMom(a) {
+//     // delete a[1];
+//     a.pop(); //뒤에서 하나 지우기
+//     return a;
+// }
+
+// var target = document.querySelector('.t_school');
+
+// target.setAttribute( 'title' , '안녕하세요');
+//타이틀로 그 안에 글이 써짐
+
+
+
+// ******************************
+// 소개하기()
+
+// function 소개하기() {
+//     var 이름 = "정을수";
+//     var 나이 = "43세";
+//     var 직업 = "Front-end Director";
+//     var 완성된문장 = '제 이름은 ' + 이름 + '이며, 나이는 ' + 나이 + ' 입니다. 직업은 ' + 직업 + ' 입니다';
+//     alert(완성된문장);
+// }
+
+
+// ******************************
+// var 이름 = "정을수";
+// var 나이 = "43세";
+// var 직업 = "Front-end Director";
+
+// 소개하기();
+// function 소개하기() {
+//     var 완성된문장 = '제 이름은 ' + 이름 + '이며, 나이는 ' + 나이 + ' 입니다. 직업은 ' + 직업 + ' 입니다';
+//     alert(완성된문장);
+// }
+
+// ******************************안전하게 하는 방법! 이름 나이 직업 선택해서 함수 안에 넣기
+// var 이름 = "정을수";
+// var 나이 = "43세";
+// var 직업 = "Front-end Director";
+
+// 소개하기(이름, 나이, 직업);
+// function 소개하기(a, b, c) {
+//     var 완성된문장 = '제 이름은 ' + a + '이며, 나이는 ' + b + ' 입니다. 직업은 ' + c + ' 입니다';
+//     alert(완성된문장);
+// }
+// ******************************안전하게 하는 방법! 이름 나이 직업 선택해서 함수 안에 넣기
+
+// 소개하기(["정을수", "43세", "Front-end Director"]);
+// function 소개하기(a) {
+//     var 완성된문장 = '제 이름은 ' + '\"' + a[0] + '"' + '이며, 나이는 ' + a[1] + ' 입니다. 직업은 ' + '"' + a[2] + '\"' +  ' 입니다'; 
+//     alert(완성된문장);
+// }
+
+
+
+// var 이름 = "정을수";
+// var 나이 = "43세";
+// var 직업 = "Front-end Director";
+// var 끝인사 = "만나서 반갑습니다."
+
+// 소개하기(이름, 나이, 직업, 끝인사);
+// function 소개하기(a, b, c, d) {
+//     var 완성된문장 = '제 이름은 ' + a + '이며, 나이는 ' + b + ' 입니다. 직업은 ' + c + ' 입니다';
+//     alert(완성된문장);
+
+//     return 완성된문장;
+// }
+
+// var 끝인사 = 소개하기();
+// alert(끝인사);
+
+// function 소개하기() {
+//     var 이름 = "정을수";
+//     var 나이 = "43세";
+//     var 직업 = "Front-end Director";
+//     var 완성된문장 = '제 이름은 ' + 이름 + '이며, 나이는 ' + 나이 + ' 입니다. 직업은 ' + 직업 + ' 입니다';
+
+
+//     return 완성된문장;
+// }
+
+// var a = 소개하기( function(a, b){ return a + b });//리터럴함수 앞에 뭔가 있으면 리터럴함수
+
+// function 소개하기( 더하기 ) {
+//     var 이름 = "정을수";
+//     var 나이 = "43세";
+//     var 직업 = "Front-end Director";
+//     var 결과 = 더하기(이름, 나이);
+
+//     console.log(결과);
+// }
+
+//1. 소개하기를 실행한다. 이때 이름없는 리터럴함수를 넣어준다.
+//2. 소개하기라는 서브루틴으로 간다.
+//3. 이 루틴에 필요한 변수개체를 2층에 만든다. ex) 더하기, 이름, 나이, 직업, 결과
+//4. 준비가 됐으면 이 루틴안의 코드를 한 줄 한 줄 실행한다. 즉 정을수가 이름에 할당, 43세가 나이에 할당된다.
+//5. 더하기 함수까지 실행한다. 이때 더하기는 이미 함수를 가지고 있다. 왜나하면 소개하기를 실행할 때 넣어졌기 때문에 더하기에라는
+//   말에 주소값이 복사 되었기 때문이다.
+//6. 더하기가 실행되면 3층이 생긴다. 이때 3층에는 파라미터는 있고 변수는  없기 때문에 바로 return이 실행되는데 
+//   이때 a와 b는 더하기함수를 실행할 때 이름과 나이를 넣어준 것을 a와 b로 받는다.
+//7. 리턴을 하면서 더하기를 실행했던 그 자리로 돌아와 리턴값을 반환해준다. 그리고 그 자리는 결과의 할당되는 자리이므로 결과에 리턴값이 할당된다.
+//8. console에서 결과를 보여준다.
+
+// var h1 = {textContent: '주송'}
+
+// var targetH1 =  document.querySelector('h1');
+// // var a = confirm('남자입니까?');
+// var a = prompt('누구세요?');
+
+
+// targetH1.textContent = a + '님 반갑습니다.';
+
+// // if (a === targetH1) {
+// //     targetH1.textContent = '님 반갑습니다.';
+// // }
+// if (a === null) {
+//     targetH1.textContent = '다시 입력하세요';
+// }
+// console.log(a);
+
+// var a = 3;
+// // a += 5; //8
+// // a -= 3; //0
+// // a *= 2; //6
+// // a /= 2; //1.5
+// a %= 4; //3
+// console.log(a);
+
+// var talk = "나는" + "오늘" + "즐겁습니다."; 
+// var name = "정을수";
+
+// name += talk;
+// console.log(name);
+
+// var a = '82';
+// var b = 82;
+// // var c = true;
+// var result = a === b
+// console.log(result);
+
+// ===은 자동변환을 하지 않는다.
+// ==은 자동변환을 해준다. 문자를 숫자로 바꾼다.
+
+// var a = function(){ 
+//     var c= 1+1;
+// };
+// var b = undefined;
+
+// var result = a() == b
+// console.log(result);
+
+
+// ------------------------------------------------------------11월 4일
+
+// var a = ('7' !== 7) ;
+// //
+// console.log(a);
+
+// var a = (0 == "0") ? "같다" : "다르다";
+// console.log(a);
+
+// var a = 10;
+// var b = ++a; //증가 후 할당
+// // var b = a++; //할당 후 증가
+
+// console.log(++a);
+
+
+// var target = document.querySelector('h1');
+// var btn = document.querySelector('.one_up');
+// var num = 1000;
+// target.textContent = num;
+
+// btn.addEventListener('click', function () {
+//     num++
+//     target.textContent = num;
+// });
+// ! 이름을 정하기 번거롭기 때문에 안에 대부분 바로 함수를 넣는다 !
+
+
+// function 할일() {
+//     num++
+//     target.textContent = num;
+//     //abbEventListener에 있는 할일에 바로 함수를 넣어도 된다 같은 할일을 설명하기 때문
+// };
+
+// var 일분은몇초 = 60; 
+// var 한시간은몇분 = 60; 
+// var 한시간은몇초 = (일분은몇초 * 한시간은몇분);
+
+// console.log(한시간은몇초 + "초");
+
+// var 받은값 = prompt('몇시간을 원하세요?') * 1
+// console.log( typeof 받은값);
+// var 몇초 = 60; 
+// var 몇분 = 60; 
+// var 계산결과 = 초계산하기(몇초, 몇분, 받은값);
+// alert(계산결과);
+
+// function 초계산하기(a, b, c) {
+
+//     return a * b * c;
+// }
+
+// console.log ("0" + (-"10") + -5);
+
+// console.log( true + true);
+// console.log( true + undefined);
+// console.log( true + false);
+
+// var 숫자1 = 10;
+// var 숫자2 = 20;
+// var 대화 ="숫자 10과 20을 더하면 "+ (숫자1 + 숫자2)+"이 됩니다.";
+
+// console.log(대화);
+
+// console.log(Infinity + -Infinity);
+
+// var 첫번째숫자 = prompt("원하는 숫자를 넣으세요") * 1;
+// var 두번째숫자 = prompt("원하는 숫자를 넣으세요") * 1;
+// var 단위 = prompt("원하는 단위를 넣으세요. ex.km,g,ml등등");
+// var 결과 = (첫번째숫자+ 두번째숫자) + 단위;
+// console.log(결과);
+
+
+// var 첫번째숫자 = prompt("원하는 숫자를 넣으세요") * 1;
+// var 두번째숫자 = prompt("원하는 숫자를 넣으세요") * 1;
+// var 단위 = prompt("원하는 단위를 넣으세요. ex.km,g,ml등등"); 
+// var 결과 = 계산하기(첫번째숫자, 두번째숫자, 단위);
+
+// function 계산하기(a, b, c) {
+//     return (a + b) + c;
+// }
+// console.log(결과);
+
+// var a = String({});
+// //문자는 빈 문자가 아닌 이상 모두 true
+// var b = 1;
+// console.log(a);
+
+
+// var a = false;
+// var b = 1;
+// console.log(a && c);
+
+
+// var a = 0;
+// var b = 1;
+// console.log(a || b);
+
+// var a = '안녕';
+// var b = 0;
+// console.log(!!a);
+// //청개구리 다 반대로 하기
+
+// var 양치여부 = true;
+// var 세수여부 = true;
+// var 회사가기 = 양치여부 && 세수여부;
+// console.log(회사가기);
+
+// var 양치여부 = false;
+// var 세수여부 = true;
+// var 마트가기 = 양치여부 || 세수여부
+// console.log(마트가기);
+
+// var 아침여부 = true;
+// var 지각하기 = !아침여부
+// console.log(아침여부);
+
+// var 아침여부 = true;
+// var 양치여부 = false;
+// var 세수여부 = false;
+// var 학교가기 = 아침여부 && (양치여부 || 세수여부)
+// console.log(학교가기);
+
+// ------------------------------------------------------------11월 5일
+
+// function b() {
+//     console.log('a');
+//     return function () {alert('sss')};
+// }
+
+// var k = (function () {
+//     var a = 10;
+//     a++
+//     return a
+// }) (); // 즉시실행함수 function 앞에 뭐가 있으면 리터럴 함수, 함수 아래에서 ()실행 
+// console.log(k);
+
+
+// var btn = document.querySelector('.one_up');
+
+// btn.onclick = b();//아래와 같이 작동
+// // btn.addEventListener('click', b());
+
+// btn.onclick = (function (bbb) {
+//     var a = 10;
+//     a++
+//     return function() {alert('aaa');};
+// }(1000)
+
+// var song = { 
+//     이름 : null,
+//     나이 : 25,
+//     성별 : null,
+//     혈액형 : 'O형'
+// };
+// var a = '안녕하세요'
+// var 통 = [];
+
+
+// btn.onclick = function() {
+//     var kal = delete song.나이;
+//     console.log(kal);
+// }
+
+// btn.onclick = function() {
+//     // if () {}
+//     for (var add in song) {
+//         // song[add] = 'ㅎ';
+//         통.push( song[add] );
+//     }
+//     console.log(통);
+// }
+
+
+// btn.onclick = function() {
+//     for (var add in song) {
+//         if (song[add] === null) {
+//             song[add] = '없음';
+//         } else if (typeof song[add] === 'string') {
+//             song[add] = '있다';
+//         } else {
+//             song[add] = '나머지';
+//         }
+//         //더 많이 사용함
+
+
+//         // else {
+//         //     if (typeof song[add] === 'string') {
+//         //         song[add] = '있다'
+//         //     }
+//         // }
+//     }
+//     console.log(song);
+// };
+
+// var 메뉴배열 = ['김치찌개', '라면', '치킨', '피자']
+// var 메뉴 = prompt("1.김치찌개 2.라면 3.치킨 4.피자 중 숫자를 적으세요");
+
+// 음식고르기(메뉴);
+
+
+// function 음식고르기(menu) {
+//     if ('0') {
+//         console.log(menu[0] + '를(을) 고르셨습니다.');
+//     } else if (menu === '라면'){
+//         console.log(menu + '를(을) 고르셨습니다.');
+//     } else if (menu === '치킨'){
+//         console.log(menu + '를(을) 고르셨습니다.');
+//     } else if (menu === '피자'){
+//         console.log(menu + '를(을) 고르셨습니다.');
+//     } else {
+//         console.log('제발 예시중에 하나를 골라주세요.');
+//     }
+// }
+
+// function 음식고르기(num) {
+//     console.log(num);
+//     if (num >= 1 && num <= 4) {
+//         console.log(메뉴[num-1] + '을(를) 주문하셨습니다.');
+//     } else if (num === null) {
+//         console.log('주문이 취소되었습니다.');
+//     } else {
+//         num = num * 1;        
+//         if ( isNaN(num) ) {
+//             console.log('숫자로 1~4까지 적어주세요');
+//         } else {
+//             console.log('1~4까지만 적어주세요');
+//         }
+//     }
+// }
+
+// var target = document.querySelector('h1');
+// var btn = document.querySelector('button');
+
+// btn.addEventListener('click', 할일);
+
+// function 할일() {
+//     if (target.className === 'off') {
+//         target.className === 'on';
+//     } else {
+//         target/className === 'off'
+//     }
+// }
+
+
+// ------------------------------------------------------------11월 7일
+// var 메뉴판 = {
+//     김치찌개 : '7,000원',
+//     라면 : '3,000원',
+//     치킨 : '18,000원',
+//     피자 : '22,000원'
+// };
+// var 메뉴 = prompt("김치찌개, 라면, 치킨, 피자 중 적으세요");
+// 음식고르기(메뉴);
+
+// function 음식고르기(menu) {
+//     if (menu === '김치찌개') {
+//         console.log(menu + '를(을) 고르셨습니다. 가격은 ' + 메뉴판.김치찌개 + ' 입니다');
+//     } else if (menu === '라면'){
+//         console.log(menu + '를(을) 고르셨습니다. 가격은 ' + 메뉴판.라면 + ' 입니다');
+//     } else if (menu === '치킨'){
+//         console.log(menu + '를(을) 고르셨습니다. 가격은 ' + 메뉴판.치킨 + '입니다');
+//     } else if (menu === '피자'){
+//         console.log(menu + '를(을) 고르셨습니다. 가격은 ' + 메뉴판.피자 + '입니다');
+//     } else if (menu === null) {
+//         console.log('주문이 취소되었습니다.');
+//     } else if (menu === "") {
+//         console.log('입력하지 않으셨습니다.');
+//     } else {
+//         console.log('메뉴중에 하나만 골라주세요');
+//     }
+// }
+
+// console.log(menu + '를 선택하셨습니다. 가격은 ' + 메뉴판[menu]);
+// var 등록버튼 = document.querySelector('.menu_add');
+// var 주문버튼 = document.querySelector('.menu_order');
+
+// 등록버튼.addEventListener('click', 등록할일);
+// 주문버튼.addEventListener('click', 주문할일);
+
+// // 메뉴확인 함수
+// function hasOwnMenu(menuName) {
+//     for (var item in 메뉴판) {
+//         if (item === menuName) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+// //메뉴리스팅 함수
+// function menuListing() {
+//     var menuListString = '';
+//     for (var item in 메뉴판) {
+//         menuListString = menuListString + item +',';
+//     }
+//     return menuListString;
+// }
+
+// function 등록할일() {
+//     var 등록메뉴명 = prompt('현재 ' + menuListing() + '있습니다. 더 등록할 메뉴명을 입력하세요.');
+
+//     if ( hasOwnMenu(등록메뉴명) ) {
+//         console.log('이미 등록된 메뉴입니다');
+//     } else {
+//         var 메뉴가격 = prompt('그 메뉴는 얼마로 할까요.');
+//         메뉴판[등록메뉴명] = 메뉴가격;
+//     }
+// }
+
+// function 주문할일() {
+//     var 고른메뉴 = prompt( menuListing() + '중 하나를 적으세요');  
+//     (function () {
+        
+//         // 메뉴에 있을때
+//         if ( hasOwnMenu(고른메뉴) ) {
+//             console.log(고른메뉴 + '를 주문하셨구요. 가격은 ' + 메뉴판[고른메뉴] + '입니다');
+//         } else if (고른메뉴 === null) {
+//             console.log('주문을 취소 하셨습니다.');
+//         } else if (고른메뉴 === '') {
+//             console.log('아무것도 입력하지 않으셨습니다.');
+//         } else {
+//             console.log('지금 입력하신 "' + 고른메뉴 + '"는 메뉴에 없습니다. 다시주문하세요.');
+//         }
+//     })()
+// }
+
+// ------------------------------------------------------------11월 8일
+
+//반복문 자동으로 1씩 증가시키기
+var i = 0;
+var a = 0;
+
+// a += 1;
+// a += 2;
+// a += 3;
+
+//()-언제까지 반복할지, 반복문은 꼭 증가시켜야 됨, 배열도 많이 사용함
+// while (i < 10) {
+//     a += i;
+//     console.log(a);
+//     i++; //i = i + i
+// }
+
+// var i = 0;
+
+// while (i < 5) {
+//     console.log('안녕하세요. 좋은 아침입니다.');
+//     i++; //i = i + 1
+// }
+
+// var i = 1;
+// var a = 7;
+// while (i < 10) {
+//     if ( i === 6 ) break;
+//     console.log(a + 'x' + i + '=' + (7 * i));
+//     i++;
+// }
+
+// var 숫자넣기 = document.querySelector('.num');
+
+// 숫자넣기.addEventListener('click', 넣을숫자);
+
+// function 넣을숫자 () {
+//     var num = prompt('몇 단을 계산할까요?') ;
+
+//     //예외 처리기
+//     if (num === null) {
+//         console.log('취소하셨습니다.');
+//         return;
+//     } else if (num === '') {
+//         console.log('숫자를 적어주세요.');
+//         return;
+//     } else if ( isNaN(num) ) {
+//         console.log('문자는 계산할 수 없습니다.');
+//         return;
+    
+//     //계산하기
+//     계산하기(num * 1)
+//     function 계산하기(num) {
+//     // var i = 1;
+
+//     // while ( i < 10) {
+//     //         console.log( num + ' X ' + i + ' = ' + (num * i));
+//     //         i++;
+//     //     }
+
+//         for (var i = 1; i < 10; i ++) {
+//             console.log( num + ' X ' + i + ' = ' + (num * i));
+//         }
+//     }
+//     }
+// }
+
+// var a = ['a', 'b', 'c', 'd', '1', '467']
+// var word = '';
+// word += a[0];
+// word += a[1];
+// word += a[2];
+// word += a[3];
+
+// var i = 0;
+// while (i < a.length) {
+//     word += a[i];
+//     i++;
+// }
+// for (var i = 0; i < a.length; i ++) {
+//     word += a[i];
+
+// }
+// console.log(word);
+
+
+
+// var list = document.querySelectorAll('li');
+// console.log(list);
+// list[0].style.border = '1px solid blue'
+// list[1].style.border = '1px solid blue'
+// list[2].style.border = '1px solid blue'
+// list[3].style.border = '1px solid blue'
+// list[4].style.border = '1px solid blue'
+
+// for (var i = 0; i < list.length; i++) {
+//     list[i].style.border = '1px solid blue'
+// }
+// console.log(list);
+
+// var stylesheet = document.styleSheets;
+// stylesheet[0].cssRules[1].cssText = 'li > a { color:pink }'
+// console.log(stylesheet[0].cssRules[1].cssText);
+
+// ------------------------------------------------------------11월 11일
+
+    var a = document.getElementById('song');
+    console.log(a);
+    
+    // var b = document.getElementsByClassName('a');
+    console.log( document.getElementsByClassName('a')[0]);
+    
+    var li들어있는배열 = document.getElementsByTagName('li');
+    console.log( li들어있는배열[0].getElementsByTagName('a'));
+    
+</script>
+</html>

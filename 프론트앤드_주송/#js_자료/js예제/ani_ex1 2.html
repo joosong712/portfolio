@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>이벤트</title>
+
+<style>
+* {margin:0; padding: 0;}
+li {list-style: none}
+ul#photo_list {
+	border:2px solid lime; 
+	display: inline-block; 
+	padding: 20px;
+}
+ul#photo_list > li {
+	border:1px solid orange;  
+	float:left; 
+	padding: 20px; 
+	position: relative;
+}
+ul#photo_list > li > a {
+	border:1px solid black;
+	padding: 10px;
+}
+ul#photo_list ul {
+	/* opacity: 0; */
+	display: none;
+	background-color: yellow; 
+	width: 100px;
+	padding:10px;
+	z-index: 100;
+	border:1px solid lime;
+	position: absolute; 
+	/* 포지션층으로 띄우지 않으면 visibility에서 자기구역을 미리 그려놓기 때문에 넓이가 포함이 된다 */
+	top:40px; 
+	left:0;
+	transition: all 1s ease;
+}
+ul#photo_list ul.opened {
+	/* display: block; */
+}
+
+ul#photo_list ul > li {
+	border:1px solid orange;
+	padding: 5px;
+}
+ul#photo_list ul > li > a {
+	text-decoration: none;
+	border:1px solid black;
+}
+body {padding:30px;}
+</style>
+</head>
+<body>
+
+<ul id="photo_list">
+	<li>
+		<a href="">건물</a>
+		<ul>
+			<li><a href="">남산타워</a></li>
+			<li><a href="">63빌딩</a></li>
+			<li><a href="">63빌딩</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">커피</a>
+			<ul>
+				<li><a href="">아메리카노</a></li>
+				<li><a href="">카페라테</a></li>
+				<li><a href="">카페라테</a></li>
+				<li><a href="">카페라테</a></li>
+				<li><a href="">카페라테</a></li>
+			</ul>
+		
+	</li>
+	<li>
+		<a href="">불꽃놀이</a>
+		<ul>
+			<li><a href="">한강축제</a></li>
+			<li><a href="">금강축제</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">장미</a>
+
+	</li>
+</ul>
+</body>
+
+<script>
+
+
+// 클릭메뉴();
+
+// function 클릭메뉴() {
+    
+//     var click요소들 = document.querySelectorAll("#photo_list > li > a");
+//     var 하위메뉴들 = document.querySelectorAll("#photo_list ul");
+
+//     for (var i = 0; i < click요소들.length; i++) {
+//         click요소들[i].addEventListener("click", clickMenu);
+//     }
+
+//     function clickMenu(e) {
+// 		e.preventDefault();
+// 		var subMenu = e.target.parentNode.querySelector('ul');
+// 		if (subMenu) {
+// 			if (subMenu.className === 'opened') {
+// 				//닫을때
+// 				subMenu.className = '';
+// 				subMenu.style.opacity = '0';
+// 				setTimeout( function() {
+// 					//transition에 1초를 줬기 때문에 1000를 준다.
+// 					subMenu.style.display = 'none';
+// 				}, 1000)
+// 			} else {
+// 				//열릴때
+// 				subMenu.className = 'opened'
+// 				subMenu.style.opacity = '0';
+// 				subMenu.style.display = 'block';
+
+// 				setTimeout( function(){
+// 					subMenu.style.opacity = '1';
+// 				} , 20 );
+// 			}
+			
+// 		}
+		
+// 	}
+	
+// }
+
+
+
+</script>
+</html>
+
+
+
+
+
+
+

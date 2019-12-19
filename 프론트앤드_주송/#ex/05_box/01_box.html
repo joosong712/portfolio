@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Text style</title>
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all"/>
+
+<style type="text/css">
+div {
+	border: 4px solid green;
+	padding: 20px;
+}
+
+/*p {
+	border: 8px solid black;
+	margin: 20px; (p태그 margin 대신 div padding으로 변경
+	padding: 15px;
+	height: 150px;
+	width: 100%;
+	overflow-y: auto;
+	넘치는 부분 invisable(보이게), hidden(숨기기), scroll(스크롤바), auto(길이+크기에 맞춰 자동
+	BFC : 블록이 두번생겨야 일어난다
+	box-sizing: border-box;
+}*/
+ 
+
+
+.inline_boxs > * {
+	/* *는 하위 자식들 모두 선택!*/
+	border: 2px solid purple;
+}
+
+.inline_boxs > strong {
+	padding: 5px;
+
+
+}
+
+.inline_boxs {
+	line-height: 40px;
+}
+
+.padding_boxs > .a {
+	border: 4px solid black;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+}
+
+.padding_boxs > .b {
+	border: 4px solid black;
+	padding: 13px 0 13px 30px;
+	margin-bottom: 20px;
+}
+
+.padding_boxs > .c {
+	border: 4px solid black;
+	padding: 23px 20px 5px; 
+	width: 452px;
+	height: 114px;
+}
+</style>
+</head>
+
+<body>
+    <div>
+    	<!-- 박스는 블록, 인라인으로 나뉜다. 흐르는 박스(인라인) 딱딱한 박스(블록) -->
+        <p>박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 line박스 그리고 그 안(in line)에서  흐르고있는 inline박스로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+    </div>
+
+    <div class="inline_boxs">
+    	<strong>aaaaaa</strong> <!-- 강조할때 -->
+    	<span>bbbbbb</span> <!-- 구획을 나눌때 -->
+    	<em>ccccccc</em> 
+    	<i>dddddd</i> <!--다른 글자와 좀 다른 느낌을 줄때-->
+    	<b>eeeeee</b> <!--다른 글자와 좀 다른 느낌을 줄때-->
+    	<a href="https://www.naver.com/">ffffff</a> <!--링크 걸때-->
+    </div>
+
+    <div class="padding_boxs">
+    	<p class="a">박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 line박스 그리고 그 안(in line)에서  흐르고있는 inline박스로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+
+    	<p class="b">박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 line박스 그리고 그 안(in line)에서  흐르고있는 inline박스로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+
+    	<p class="c">박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 line박스 그리고 그 안(in line)에서  흐르고있는 inline박스로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+    </div>
+</body>
+</html>
+
+
+
+
+

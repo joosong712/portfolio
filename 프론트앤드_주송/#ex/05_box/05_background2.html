@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Text style</title>
+<!-- <link rel="stylesheet" href="css/reset.css" type="text/css" media="all"/> -->
+<style type="text/css">
+.icon > a {
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	display: block;
+	text-indent: -999px;
+	overflow: hidden;
+	background-image: url('images/icon.png');
+	background-repeat: no-repeat;
+}
+
+.icon > .like:hover {
+	background-position: -50px 0;
+}
+
+.icon > .find {
+	background-position: 0px -50px;
+}
+
+.icon > :hover {
+	background-position-x: -50px ;
+}
+
+.soda {
+	border: 2px solid black;
+}
+
+.soda > ol > li > ul {
+	display: none;
+}
+
+.soda > ol > li:hover > ul {
+	display: block;
+}
+
+hr {
+	margin: 0;
+	visibility: hidden;
+	border: none;
+}
+</style>
+</head>
+
+<body>
+   <div class="icon">
+   	<a href="mailto:zoosong2985@gmail.com" class="like">즐겨찾기</a>
+   	<a href="" class="find">위치찾기</a>
+   </div>
+
+   <hr/>
+
+   <div class="soda">
+   	<h3>soda</h3>
+    <ol> <!--순서있는-->
+	   	<li>
+	   		콜라
+	   		<ul>
+	   			<li>코카</li>
+	   			<li>펩시</li>
+	   			<li>815</li>
+	   		</ul>
+	   	</li>
+	   	<li>사이다</li>
+	   	<li>환타</li>
+    </ul>
+	</ol>
+
+	<dl id="song">
+		<dt>방송국</dt>
+		<dd>엠비씨</dd>
+		<dt>출연진</dt>
+		<dd>유재석</dd>
+		<dd>유재석</dd>
+		<dd>유재석</dd>
+		<dd>유재석</dd>
+		<dd>유재석</dd>
+		<dd>유재석</dd>
+		<dt>시간</dt>
+		<dd>2019년...</dd>
+	</dl>
+	</div>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Float</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+	<style type="text/css">
+        body { padding: 50px; }
+        .grandmom {
+            border: 2px solid black;
+            padding: 30px;
+            width: 680px;
+            /*position: relative;*/
+        }
+        .mother{
+            width: 270px;
+            padding: 20px;
+            border: 2px solid lime;
+            /*overflow: hidden;*/
+            /*display: inline-block;*/
+            /*float: left;*/
+            /*display: table-cell;*/
+            /*position: absolute;*/
+            /*display: table-caption;*/
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 100;
+        }
+
+/*        .mother:after {
+            content: '';
+            clear: left;
+            display: block;
+        }*/
+        .mother > .photo {
+            width: 100px;
+            height: 100px;
+            float: left;
+            border: 10px solid lime;
+            margin-right: 20px;
+            /*position: absolute;*/
+            top: 10px;
+            bottom: auto;
+            right: auto;
+            left: 10px;
+            z-index: 550;
+        }
+
+        .mother.left {
+            float: left; z-index: 500;
+        }
+
+        .mother.left > .photo{
+            border-color: red;
+        }        
+        
+        .mother.right {
+            float: right;
+        }
+
+        .mother.right > .photo{
+            border-color: blue; 
+        } 
+
+        .bottom {
+            border: 2px solid black;
+            clear: both;
+            padding: 10px;
+        }
+
+        p {
+            border: 2px solid blue;
+        }
+
+        header {
+            background-color: rgba(0,0,0, 0.8);
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 80px;
+            z-index: 200;
+
+        }
+
+        .darkbox {
+            background-color: rgba(0,0,0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 600;
+            display: none;
+        }
+
+        .darkbox.on {
+            display: block;
+        }
+
+        .photo_zoom {
+            width: 200px;
+            height: 300px;
+            left: 50%;
+            right: auto;
+            top: auto;
+            bottom: 50%;
+            margin-left: -100px;
+            margin-bottom: -150px;
+            background-color: white;
+            position: absolute;
+        }
+
+        .mother > .comment {
+            position: absolute;
+            /*border: 1px solid black;*/
+            top: -15px;
+            right: -15px;
+        }
+
+        .mother > .comment > img {
+            width: 25px;
+        }
+
+        .mother > .comment > span{
+            position: absolute;
+            /*border: 1px solid black;*/
+            right: 100%;
+            top: 5px;
+            color: red;
+        }       
+	</style>
+</head>
+
+<body>
+<header>안녕하세요.</header>
+<div class="grandmom">
+    <div class="mother left">
+        <div class="photo">a</div>
+        <p>LEFT. HTML은 선형적(linearity)입니다.</p>
+        <a href="" class="comment">
+            <img src='images/icon_info.png'/ alt="댓글읽기">
+            <span>83333</span>
+        </a>
+        <div class="darkbox">
+            <div class="photo_zoom"></div>
+        </div>
+    </div>
+
+    <div class="mother right">
+        <div class="photo">a</div>
+        <p>LEFT. HTML은 선형적(linearity)입니다.</p>
+        <a href="" class="comment">
+           <img src='images/icon_info.png'/ alt="댓글읽기">
+            <span>811</span>
+        </a>
+<!--         <div class="fix"></div>
+-->    </div>
+    <div class="bottom">LEFT. HTML은 선형적(linearity)입니다.</div>
+
+<script>
+var 버튼 = document.querySelector('.mother.left > .photo');
+var 목표물 = document.querySelector('.darkbox');
+var 댓글수 = document.querySelector('.mother.left > .comment > span');
+
+버튼.addEventListener('click', 할일);
+목표물.addEventListener('click', 할일2);
+
+function 할일() {
+    목표물.style.display = 'block';
+    댓글수.style.color = '#666';
+}
+function 할일2() {
+    목표물.style.display = 'none';
+}
+
+</script>
+
+</body>
+</html>
+
+
+

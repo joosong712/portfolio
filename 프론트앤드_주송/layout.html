@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>hello world!</title>
+	<link rel="stylesheet" media="all" href="" />
+	<style>
+		*{margin:0; padding:0}
+		li {list-style: none;}
+		.grand {
+			/* width:668px; */
+			height: 300px;
+			border:2px solid red;}
+
+		.mother {
+			width:47.904192%; /* 320/668 */
+			height: 70%;
+			padding:25px;
+			border:2px solid blue;
+		}
+		.mother > .son {
+			width:38.125%; /* 122/320 */
+			height: 50%;
+			background: yellow;
+		}
+
+		.box {
+			/* width: 648px; */
+			background: lime;
+			padding:26px 36px 26px 36px;
+			min-width: 800x; /* 이 사이즈부터는 줄어들지 않는다 */
+		}
+
+		.box ul li {
+			background: yellow;
+			width: 23.1481481481481%;
+			height: 150px;
+			float: left;
+			overflow: hidden;
+			position: relative;
+			padding-top: 23.1481481481481%;
+			height: 100%;
+		}
+
+		.box ul li + li {margin-left:2.4691358024691%;}
+
+		.box ul::after {display: block; clear: left; content: '';}
+
+		.box ul img {
+			position: absolute; 
+			left:50%; top:50%;
+			/* margin-left:-135px;
+			   margin-top: -182px; */
+			transform: translate(-50%, -50%); 
+			/* margin으로 지정하면 퍼센트처럼 자동으로 되지 않기 때문에 transform으로 */
+			min-width: 100%;
+			min-height: 100%;
+		}
+
+		.content {
+			border-left:1px solid black;
+			border-right:1px solid black;
+			padding: 30px 0;
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.starwars {
+			background: lime;
+			width:calc(100% + 20px); 
+			margin-left:-10px;
+		}
+		.starwars::after {display: block; content: ''; clear: left;}
+
+		.starwars > li {
+			border:1px solid red;
+			width: 33.333333333333333%;
+			box-sizing: border-box;
+			padding: 0 10px;
+			float: left;
+		}
+		
+		.starwars > li > div {
+			background: gray;
+		}
+
+		.box_3 {
+			border-left:1px solid black;
+			border-right:1px solid black;
+			width: 80%;
+			margin: 0 auto;
+			padding: 30px 0;
+		}
+
+		.box_3::after {display: block; content: ''; clear: left;}
+
+		.hello {
+			width:calc(100% + 24px);
+			margin-left: -12px;
+		}
+		.hello > li {
+			width: 33.333333333333333%;
+			background:  yellow;
+			border:1px solid red;
+			padding: 0 12px;
+			float: left;
+			box-sizing: border-box;
+			padding-top: 13.8121546961326%;
+			position: relative;
+		}
+		.hello > li > div {
+			background: #e4e4e4;
+			position: absolute;
+			top:0;
+			bottom:0;
+			left:12px;
+			right:12px;
+			/* padding-top:46.01227064436%; */
+		}
+
+		.box_wrap {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.box_4 {
+			width: 86.6666666666667%;
+			border-left:1px solid black;
+			border-right:1px solid black;
+			padding: 30px 0;
+			margin: 0 auto;
+		}
+
+		.box_4 > .thanku {
+			background-color: blueviolet;
+			width:calc(100% + 28px);
+			margin-left: -14px;
+			margin-top:-14px;
+		}
+
+		.box_4 > .thanku::after {display: block; content: ''; clear: left;}
+
+		.box_4 > .thanku > li {
+			border:1px solid yellow;
+			float: left;
+			width: 25%;
+			padding: 14px;
+			box-sizing: border-box;
+			padding-top: calc(9.3632958801498% + 28px); /* 100/1068 */
+			position: relative;
+		}
+
+		.box_4 > .thanku > li > div {
+			background: #e4e4e4;
+			position: absolute;
+			top:14px;
+			bottom:14px;
+			right: 14px;
+			left:14px;
+		}
+
+		.wrap {
+			width: 80%;
+			border-left:1px solid black;
+			border-right:1px solid black;
+			margin: 0 auto;
+			padding: 30px 0;
+		}
+
+		.hey {
+			background: yellow;
+			width: calc(100% + 24px);
+			margin-left: -12px;
+		}
+
+		.hey::after {clear: left; content: ''; display: block;}
+		.hey > li {
+			float: left;
+			width: 33.333333%;
+			padding: 0 12px;
+			border:1px solid red;
+			box-sizing: border-box;
+			padding-top: 13.8121546961326%; 
+			position: relative;
+		}
+		.hey > li > .item {
+			background: #e4e4e4;
+			position: absolute;
+			top:0;
+			bottom:0;
+			left:12px;
+			right:12px;
+		}
+
+		.hey > li > .item > .photo {
+			position: absolute;
+			width: 63.1900316440189%;
+			left:0;
+			top:0;
+			bottom:0;
+			border:1px solid rgb(241, 241, 250);
+			overflow: hidden;
+			box-sizing: border-box;
+		}
+
+		.hey > li > .item > .photo > img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 110%;
+		}
+
+		.hey > li > .item > .title{
+			border:1px solid red;
+			position: absolute;
+			top:0;
+			left:63.1901784034016%;
+			right:0;
+			bottom:0;
+		}
+
+		
+	</style>
+	<script></script>
+</head>
+<body>
+	<div class="grand">
+	<div class="mother">
+		<div class="son"></div>
+	</div>
+
+	<div class="box">
+		<ul>
+			<li><img src="../프론트앤드_주송/gallery_medium.jpg" /></li>
+			<li><img src="../프론트앤드_주송/gallery_medium.jpg" /></li>
+			<li><img src="../프론트앤드_주송/gallery_medium.jpg" /></li>
+			<li><img src="../프론트앤드_주송/gallery_medium.jpg" /></li>
+		</ul>
+	</div>
+</div>
+
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+	<div class="content">
+		<ul class="starwars">
+			<li><div>hi</div></li>
+			<li><div>hi</div></li>
+			<li><div>hi</div></li>
+			
+		</ul>
+	</div>
+</br></br></br>
+	<div class="box_3">
+		<ul class="hello">
+			<li><div>hello</div></li>
+			<li><div>hello</div></li>
+			<li><div>hello</div></li>
+		</ul>
+	</div>
+
+</br></br></br>
+
+	<div class="box_wrap">
+		<div class="box_4">
+			<ul class="thanku">
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+				<li><div>thanku</div></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="wrap">
+		<ul class="hey">
+			<li>
+				<div class="item">
+					<div class="photo">
+						<img src="../프론트앤드_주송/gallery_medium.jpg">
+					</div>
+						<p class="title">안녕하세요</p>
+				</div>
+			</li>
+
+			<li>				
+				<div class="item">
+					<div class="photo">
+						<img src="../프론트앤드_주송/gallery_medium.jpg">
+					</div>
+						<p class="title">안녕하세요</p>
+				</div>
+			</li>
+
+			<li>				
+				<div class="item">
+					<div class="photo">
+						<img src="../프론트앤드_주송/gallery_medium.jpg">
+					</div>
+						<p class="title">안녕하세요</p>
+				</div>
+			</li>		
+		</ul>
+	</div>
+</body>
+</html>

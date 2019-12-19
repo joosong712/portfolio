@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>이벤트</title>
+
+<style>
+* {margin:0; padding: 0;}
+li {list-style: none}
+ul#photo_list {
+	border:2px solid lime; 
+	display: inline-block; 
+	padding: 20px;
+}
+ul#photo_list > li {
+	border:1px solid orange;  
+	float:left; 
+	padding: 20px; 
+	position: relative;
+}
+ul#photo_list > li > a {
+	border:1px solid black;
+	padding: 10px;
+}
+ul#photo_list ul {
+	display: none;
+	background-color: yellow; 
+	position: absolute; 
+	top:40px; 
+	left:0; 
+	width: 100px;
+	padding: 10px;
+	z-index: 100;
+	border:1px solid lime;
+	transition:all 1s ease;
+	opacity: 0;
+}
+ul#photo_list ul.opened {
+	display: block
+}
+ul#photo_list ul > li {
+	border:1px solid orange;
+	padding: 5px;
+}
+ul#photo_list ul > li > a {
+	text-decoration: none;
+	border:1px solid black;
+}
+body {padding:30px;}
+</style>
+</head>
+<body>
+
+<ul id="photo_list">
+	<li>
+		<a href="">건물</a>
+		<ul>
+			<li><a href="">남산타워</a></li>
+			<li><a href="">63빌딩</a></li>
+			<li><a href="">63빌딩</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">커피</a>
+		<ul>
+			<li><a href="">아메리카노</a></li>
+			<li><a href="">카페라테</a></li>
+			<li><a href="">카페라테</a></li>
+			<li><a href="">카페라테</a></li>
+			<li><a href="">카페라테</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">불꽃놀이</a>
+		<ul>
+			<li><a href="">한강축제</a></li>
+			<li><a href="">금강축제</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="">장미</a>
+
+	</li>
+</ul>
+</body>
+
+<script>
+var ulElems = document.querySelector('ul#photo_list');
+
+// aElems[0].addEventListener('click', clickWork);
+// aElems[1].addEventListener('click', clickWork);
+// aElems[2].addEventListener('click', clickWork);
+// aElems[3].addEventListener('click', clickWork);
+
+window.addEventListener('click', clickWork);
+document.body.addEventListener('click', clickWork);
+// ulElems.addEventListener('click', clickWork);
+
+ulElems.onclick = clickWork;
+
+//for문은 배열을 할때 찾아서 넣을때 많은 객체가 있을때
+// for ( var i = 0; i < aElems.length; i++) {
+// 	aElems[i].addEventListener('click', clickWork, false);
+// 	//true로 하면 캡쳐링, false로 하면 버블링 기본값은 버블링으로 되어있다.
+// }
+
+function clickWork(event) {
+	event.preventDefault(); //a의 기본동작 링크 넘어가기 취소
+	event.stopImmediatePropagation(); //감지장치도 빼고 실행도 다 중단시키는 방법
+	// window.removeEventListener('click', clickWork);
+	// document.body.removeEventListener('click', clickWork)
+	// 감지장치 떼어내는 방법 remove
+
+	if (this.tagName === 'UL') {
+		console.log('ul입니다');
+	} else if ( this.tagName === 'BODY') {
+		console.log('body입니다');
+	} else {
+		console.log('window입니다');
+	}
+	
+}
+	// if ( event.target.tagName === 'UL') return;
+	// console.log( event.target.outerText, event.target.tagName);
+	// }
+
+
+	// console.log( event.target.tagName, this.tagName);
+	//target.tagName은 클릭되는 객체를 찾아준다.
+
+	//this는 함수를 실행하게 만들어주는 객체를 가르킨다.
+	//실행문에 객체 옆에 있는 것이 this
+
+
+
+//폴백 
+
+
+</script>
+</html>
+
+
+
+
+
+
+

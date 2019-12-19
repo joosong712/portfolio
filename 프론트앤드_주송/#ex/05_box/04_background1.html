@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Text style</title>
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all"/>
+<style type="text/css">
+    .graph {
+    	width: 456px;
+    	height: auto;
+    	border: 2px solid black;
+    	background-image: url('images/landing-background.gif');
+    	background-color: gray;
+    	padding: 15px;
+    	margin-bottom: 30px;
+    }
+
+    .graph > div {
+    	height: 28px;
+    	padding-top: 8px;
+    	margin-bottom: 15px;
+    	text-align: right;
+    }
+
+    .graph > div:last-child{
+    	margin-bottom: 0px;
+    }
+
+    .graph > div > span {
+ 		height: 35px;
+ 		color: white;
+    }
+    
+    .graph > div > b {
+		color: black;
+		padding: 0 10px 0 10px;
+		text-align: right;
+    }
+
+    .graph > .box1 {
+    	width: 100%;
+    	background-color: red;
+    }
+
+    .graph > .box2 {
+    	width: 75%;
+    	background-color: lime;
+    }
+
+    .graph > .box3 {
+    	width: 54%;
+    	background-image: url('images/red_pattern.jpg');
+    }
+
+    .graph > .box4 {
+    	width: 64%;
+    	background-color: orange;
+    }
+
+    .number {
+    	text-align: center;
+    	line-height: 40px;
+    	background-color: gray;
+    	
+    }
+
+    .number > a {
+    	color: white;
+    	padding: 0 5px;
+    	text-decoration-line: none;
+        margin: 0 2px;
+
+    }
+
+    .slider_page {
+        background-color: gray;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .slider_page > a {
+        vertical-align: middle; 
+        height: 14px;
+        width: 14px;
+        border-radius: 7px;
+        background-color: black;
+        text-indent: -999px;
+        overflow: hidden;
+        display: inline-block;
+        color: white;
+    }
+
+    .slider_page > a:hover {
+        background-color: yellow;
+    }
+
+    .box_number {
+        background-color: gray;
+        text-align: center;
+        line-height: 40px;  
+    }
+
+    .box_number > a {
+        width: 24px;
+        height: 24px;
+        border: 1px solid white;
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration-line: none;
+        color: white;
+        line-height: 24px;
+    }
+
+    .tab {
+        border: 1px solid black;
+        text-align: center;
+        font-size: 0;
+    }
+
+    .tab > li {
+        border: 1px solid gray;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .tab > li > a {
+        border: 1px solid red;
+        padding: 10px 20px;
+        display: block;
+    }
+
+</style>
+</head>
+
+<body>
+	<div class="graph">
+	
+			<div class="box1">
+				<span>1위</span><b>100%</b>
+			</div>
+
+			<div class="box2">
+				<span>2위</span><b>75%</b>
+			</div>
+
+			<div class="box3">
+				<span>4위</span><b>54%</b>
+			</div>
+
+			<div class="box4">
+				<span>3위</span><b>64%</b>
+			</div>
+	</div>
+
+		<br />
+
+		<div class="number">
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+    	</div>
+
+        <br /><br />
+
+        <div class="slider_page">
+        <a href="">아우디</a>
+        <a href="">벤츠</a>
+        <a href="">현대</a>
+        <a href="">기아</a>
+        <a href="">푸조</a>
+        <a href="">미니</a>
+        <a href="">삼성</a>
+        </div>
+
+        <br /><br />
+
+        <div class="box_number">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        </div>
+
+        <br /><br />
+
+        <ul class="tab">
+        <li><a href="">빨강</a></li>
+        <li><a href="">노랑</a></li>
+        <li><a href="">초록</a></li>
+        </ul>
+
+        <p>안녕하세요</p>
+</body>
+</html>
+
+
+
+
+

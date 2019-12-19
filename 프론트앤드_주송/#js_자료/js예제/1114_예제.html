@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    <div id = "service">
+        <h2><a href="">차랑서비스</h2>
+        <ul>
+            <li><a href="">차량</a></li>
+            <li><a href="">주유</a></li>
+            <li><a href="">소모품교체</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+// var serviceE1 = document.querySelector('#service');
+// var serviceBtn = document.querySelector('h2 > a');
+// var listTargets = serviceE1.querySelectorAll('ul > li')
+
+// serviceBtn.onclick = function (event) {
+//     event.preventDefault();
+//     for (var i = 0; i < listTargets.length; i++) {
+//         listTargets[i].className = 'list-item'
+//     }
+// }
+
+var serviceE1 = document.querySelector('#service');
+var listTargets = serviceE1.querySelectorAll('ul > li');
+
+
+serviceE1.addEventListener('click', clickWork );
+
+function clickWork (event) {
+    event.preventDefault();
+    //클래스 이름으로 구분한 케이스
+    if (event.target.tagName !== 'A') return; //A가 아니면 리턴
+    if (event.target.parentNode.tagName === 'H2') {
+        //보더를 준다.
+        for (var i = 0; i < listTargets.length; i++) {
+            listTargets[i].style.border = '1px solid red'  
+        }
+    } else {
+        //배경색을 준다.
+        for (var i = 0; i < listTargets.length; i++) {
+            listTargets[i].style.background = 'yellow'  
+        }
+    }
+
+}
+
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>송이의 일기</title>
+<!--<link href="css/common.css" type="text/css" rel="stylesheet" media="all"> -->		<!-- 링크 넣을때 rel(모양시트) 필수적으로 추가해야 됨 type은 버전마다 다름 
+	media 스크린, 프린트 용도가 다 있음-->
+<style>
+
+body {
+	background-color: #ededed;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 24px;
+	border-bottom: 3px solid black;
+	padding-bottom: 10px;
+}
+
+p {
+	font-size: 18px;
+}
+
+
+</style>
+</head>
+<body>
+	<h1>송이의 일기</h1>
+	<!-- DOM 안에 스타일을 주어서 바로 수정하기 style="border: 2px solid red"-->
+	<p title="웹표준의 동기" >오늘은 웹표준 공부를 하게 되었습니다. 생각보다 만만치 않아서 고생을 하였습니다. 태그를 의미 있게 사용한다는 말이 와닿지 않았습니다. 아무래도 복습을 하지 않으면 어려울 것 같습니다.</p>
+	<!-- <img src="images/sample1.jpg" alt="작은서점 지원사업" /> -->
+
+	<!-- 자바 스크립트 숨기기  -->
+	<!-- 주석 달기 command + (/) -->
+	<!--
+	<script>
+		var song = document.createElement('p');
+		var 가져온body = document.querySelector('body');
+		song.innerText = '저는 주송입니다';
+		song.className = "song";
+		song.style.border = "20px solid black";
+
+		가져온body.appendChild(song);
+	</script>
+		
+-->
+	</body>
+</html>

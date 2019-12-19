@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {padding:0; margin:0;}
+    .menu {overflow: hidden;}
+    li {list-style: none; float: left;}
+    li img {width:75px; vertical-align: top; box-sizing: border-box; }
+    .menu > li > a {position: relative; display: block;}
+    #placeholder {width:300px; height: 200px;}
+    .menu > li > a.on:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 4px solid lime;}
+    </style>
+</head>
+<body>
+    <div id="photo_list">
+    <h1>나의 사진첩</h1> 
+    <ul class="menu"> 
+        <li><a href="" class="on"><img src="images/bigben.jpg" alt= "멋진 건물"></a></li> 
+        <li><a href=""><img src="images/coffee.jpg" alt="향기로운 커피"></a></li>
+        <li><a href=""><img src="images/fireworks.jpg" alt="화려한 불꽃놀이"></a> </li> 
+        <li><a href=""><img src="images/rose.jpg" alt="아름다운 장미"></a></li> 
+    </ul>
+    <!-- <img id="placeholder" src="http://placehold.it/300x200"/>
+    <p id="desc">사진 설명입니다.</p> -->
+</div>
+</body>
+<script>
+    //li a 링크를 img 링크로 넣기 
+
+    // 1. 리스너를 ui에 설치한다.
+    // 2. 클릭되면 a의 href를 저장해둔다.
+    // 3. 클릭되면 a의 title을 저장해둔다.
+    // 4. 저장한 주소를 placeholder의 src에 할당한다.
+    // 5. 저장한 주소를 desc의 text노드에 반영한다.
+
+    var divElem = document.querySelector('#photo_list');
+    var ulElem = divElem.querySelector('ul');
+    var btnImags = ulElem.querySelectorAll('img')
+    // var phoList = document.querySelector('#placeholder');
+    // var pElem = document.querySelector('#desc');
+    
+    //타킷요소 만들기
+    var imgBox = document.createElement('img');
+    divElem.appendChild(imgBox);
+    imgBox.id = 'placeholder'
+    imgBox.setAttribute("src", "http://placehold.it/300x200");
+
+
+    var desc = document.createElement('p');
+    divElem.appendChild(desc);
+    var descText = document.createTextNode('사진설명입니다.');
+    desc.appendChild(descText);
+
+
+
+    ulElem.addEventListener('click', clickWork);
+
+    function clickWork(event) {
+        event.preventDefault();
+        // if (event.target.tagName === 'A') return;
+        console.log(event.target.tagName);
+        //A만 추려낸다.
+        
+        if (event.target.tagName === 'IMG') {
+            
+            // var hrefValue = event.target.getAttribute('href');
+            // target.setAttribute('src', hrefValue);
+
+            // var hrefValue = event.target.href;
+            // target.src = hrefValue;
+
+            // var title = event.target.title;
+            // 텍스트노드 직접 업데이트 하기
+            // descElem.childNodes[0].nodeValue = title;
+
+            //중복되지 않고 한개만 선택되게 한다.
+            for (var i = 0; i < btnImags.length; i++) {
+                btnImags[i].parentNode.className = '';
+            }
+            event.target.parentNode.className = 'on';
+            imgBox.src = event.target.src;
+            descText.textContent = event.target.alt;
+        }}
+</script>
+</html>

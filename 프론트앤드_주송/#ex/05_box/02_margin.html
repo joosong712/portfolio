@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Text style</title>
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all"/>
+<style type="text/css">
+	html {
+		border: 4px solid red;
+		background-color: blue;
+	}
+
+	body {
+		border: 4px solid black;
+		margin: 20px;
+		background-color: yellow;
+	}
+
+.text_box {
+	border: 4px solid black;
+	height: auto;
+	width: 452px;
+	padding: 20px;
+/*	background-color: lime; 
+	background-image: url('images/html5.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: 100%;
+	background-size: auto 100px;*/
+	background: lime url('images/html5.png') no-repeat center top / auto 100px;
+	margin: 0 auto;
+}    
+
+.text_box > img {
+	margin: 0 auto;
+	display: block;
+	width: 150px;
+}
+.text_box > p {
+	border: 4px solid black;
+	padding: 10px;
+	background-color: orange;
+	margin-bottom: 20px;
+}
+/* 하단에서 추가 될수도 있기 때문에 상단에 마진주고 첫번째는 마진 0 주기*/
+.text_box > p:last-child {
+	margin-bottom: 0;
+}
+</style>
+</head>
+
+<body>
+    <div class="text_box">
+    	<img src="images/icon.png" />
+        <p>박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 <strong>line박스</strong> 그리고 그 안(in line)에서  흐르고있는 <strong>inline박스</strong>로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+
+        <p>박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 <strong>line박스</strong> 그리고 그 안(in line)에서  흐르고있는 <strong>inline박스</strong>로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+
+        <p>박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을 이루고 있는 <strong>line박스</strong> 그리고 그 안(in line)에서  흐르고있는 <strong>inline박스</strong>로 이루어져 있습니다. line박스는 눈으로 확인할 수 는 없고 다만, 내부적으로 글줄이 만들어 지면서 자동으로 생성됩니다.</p>
+
+    </div>
+ 
+</body>
+</html>
+
+
+
+
+

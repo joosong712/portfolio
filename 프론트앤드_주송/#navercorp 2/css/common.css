@@ -1,0 +1,93 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+/* reset */
+body {
+	font:normal 12px 'NanumSquare', Arial, sans-serif ;
+    line-height:1.3;
+    font-size: 17px;
+    color:black;
+	background-color:#fff;
+	margin:0;
+    padding:0;
+    width: 1100px;
+}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol {list-style:none;}
+img {border:0;}
+a {text-decoration:none; color:black;}
+table {width: 100%; border-collapse: collapse;}
+em{font-style: normal;}
+footer{ background: #f8f9fb;}
+
+/* common */
+
+
+
+
+/* header */
+header {padding: 32px 0 31px 30px; position: relative;}
+header > h2 { display: inline-block; position: absolute;}
+
+/* nav */
+.menu { padding-left:199px;}
+.menu::after{clear: both; display: block; content: '';}
+.menu > li {float: left; font-size: 16px; font-weight: bold;}
+.menu > li + li {margin-left: 64px;}
+.lang {position: absolute; right:95px; top:35px; color: #818181; font-size: 11px; display: inline;}
+.lang .kor::after{content: ''; height: 8px; border:1px solid #999999; margin-left:12px;}
+.lang span + span {margin-left:12px;}
+.menu_ham {position: absolute; right:29px; top:32px;}
+.menu_ham .top, .menu_ham .middle, .menu_ham .bottom
+{border:1px solid #333333; display: block; width: 24px; margin-top:4px;}
+
+/* main */
+
+/* slide */
+.mainvisual img {width: 100%;}
+.mainvisual ul {position: relative;}
+.mainvisual ul li h3, .mainvisual ul li p, .mainvisual .page 
+{position: absolute; color: white; top:115px; left:160px;}
+.mainvisual ul li p {top:238px;}
+.mainvisual ul li p + p {top:}
+.mainvisual li h3 {font-size: 36px;}
+.btn > .prev {
+    background: url('../images/sprite.png') no-repeat -296px -99px;
+    position: absolute; top:275px; left:85px;
+    width: 46px; height: 46px; font-size: 0; }
+.btn > .next {
+    background: url('../images/sprite.png') no-repeat -346px -99px;
+    width: 46px; height: 46px;
+    position: absolute; right:85px; top:275px;font-size: 0;}
+
+
+/* contents */
+.contents {padding: 69px 151px 60px 151px;}
+.topic {}
+.topic > ul::after {content: ''; display: block; clear: left;}
+.topic > ul > li {width: 210px;float: left;}
+.topic > ul > .accounts {width:160px;}
+
+/* services */ 
+.services > ul {margin-top:97px;}
+.services > ul::after {content: ''; display: block; clear: left;}
+.services > ul > li {float: left; width: 266px; height: 200px;}
+.services > ul > li strong, .services > ul > li span {display: none;}
+.services > ul > li > a > img {width: 267px; height: 200px;}
+
+/* support */
+.support .top {text-align: center; margin-top:115px; margin-bottom:70px;}
+.support .top > h2 {border:1px solid red; margin-bottom:30px; font-size: 30px;}
+.bottom {}
+.bottom::after{content: ''; display: block; clear: left;}
+.bottom > li {width: 172px; padding:0 13px; float: left;}
+.bottom > img {text-align: center;}
+.bottom > li strong {color:#03c74b}
+.bottom > li + li {border-left:1px solid #999;}
+.bottom strong, .bottom span {display: block; text-align: center;}
+
+/* footer */

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<title>이벤트</title>
+<style>
+* {margin:0; padding:0}
+header {
+    background-color: black; height: 80px; position: relative;}
+nav {
+    height:80px;
+    position:absolute;
+    top:80px;
+    left:0;
+    right:0;
+    background-color: gray;
+}
+header > nav.on {position: fixed; top:0px;} 
+section {min-height: 100vh;}
+section.num1 {background-color:lime}
+section.num2 {background-color:yellow}
+section.num3 {background-color:pink}
+section.num4 {background-color:blue}
+.item {width:100px; height: 100px; background-color: blue;}
+.item.on {transform: translate(300px, 0); transition: all 0.5s ease;}
+</style>
+</head>
+
+<body>
+<header>
+    <nav>
+
+    </nav>
+</header>
+<section class="num1"></section>
+<section class="num2">
+    <div class="item"></div>
+</section>
+<section class="num3"></section>
+<section class="num4"></section>
+</body>
+
+<script>
+window.addEventListener('scroll', scrollWork);
+var htmlEl = document.querySelector('html');
+var navEl = htmlEl.querySelector('nav');
+var item = document.querySelector('.item')
+
+function scrollWork() {
+    var htmlElTop = htmlEl.scrollTop;
+    console.log(htmlEl.scrollTop);
+    if (htmlElTop > 80) {
+        navEl.className = 'on';
+    }
+    if (htmlElTop < 80) {
+        navEl.className = '';
+    }
+    if (htmlElTop > 250 && htmlElTop < 350) {
+        item.classList.add('on');
+    }
+    if (htmlElTop > 800) {
+        item.classList.remove('on');
+    }
+
+}
+
+window.addEventListener('resize', resize);
+window.addEventListener('load', loadWork);
+function loadWork() {
+    console.log(window.innerWidth);
+    if (window.innerWidth > 1024) {
+        overMenu();
+    } else if (window.innerWidth < 640) {
+        clickMenu()
+    }
+}
+
+function resize() {
+    // console.log(window.innerWidth);
+    if (window.innerWidth > 1024) {
+        overMenu();
+    } else if (window.innerWidth < 640) {
+        clickMenu()
+    }
+}
+
+function overMenu() {
+
+}
+
+function clickMenu() {
+
+}
+
+</script>
+
+</html>

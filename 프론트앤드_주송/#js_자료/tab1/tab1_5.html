@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>hello world!</title>
+<style>
+* {margin:0; padding:0}
+li {list-style: none}
+body {padding:50px;}
+
+.wrap {
+	width:90.196078%; /* 920 / 1020 */
+	margin:0 auto; 
+	background-color:lime; 
+	height: 500px;
+}
+.tab_menu {
+	border:2px solid black; 
+	width:54.130435%; /* 498 / 920 */
+	margin:0 auto;
+	overflow: hidden;
+	min-width: 400px;
+}
+.tab_menu > li > a {
+	position: relative;
+	float:left; 
+	width: calc( (100% - 8px) / 5) ; /* 98 / 498 */
+	background-color: #999; 
+	line-height: 50px; 
+	text-align: center;
+	color:white;
+	text-decoration-line: none;
+}
+.tab_menu > li.on > a {
+	background-color:blue;
+}
+.tab_menu > li + li > a {
+	margin-left:2px;
+}
+.tab_content > div {
+	display: none;
+	margin:20px;
+	padding:20px;
+	background-color:blue;
+	color:white;
+	font-size:18px;
+}
+.tab_content > div.on {
+	display: block;
+	height: 300px;
+}
+</style>
+<!-- <script src="tab_5_data.js"></script> -->
+</head>
+<body>
+<div class="wrap">
+	<ul class="tab_menu">
+		<li><a href="">학교</a></li>
+		<li><a href="">공원</a></li>
+		<li><a href="">놀이터</a></li>
+		<li class="on"><a href="">집안</a></li>
+		<li><a href="">사무실</a></li>
+	</ul>
+	<div class="tab_content">
+		<div>학교 내용</div>
+		<div>공원 내용</div>
+		<div>놀이터 내용</div>
+		<div class="on">집안 내용</div>
+		<div>사무실 내용</div>
+	</div>
+</div>
+<script>
+// * onclick 이벤트리스트너를 이용하세요.
+// * tab_5_data.js를 사용하세요.
+// 5. 클릭하면 tabData > tabItems > itemColor 항목을 이용해서 클릭할 때마다 해당 탭과 
+//    컨텐츠의 배경색이 같은색으로 바뀌도록 만드세요. 
+// http://www.json-generator.com/api/json/get/bUrxlWydFe?indent=2
+
+
+//통신해서 데이터 받아오기
+const 요청URL = 'http://www.json-generator.com/api/json/get/bUrxlWydFe?indent=2';
+const 요청장치 = new XMLHttpRequest();
+요청장치.open('GET', 요청URL);
+요청장치.responseType = 'json';
+요청장치.send();
+요청장치.onload = function() {
+	const 탭메뉴json = 요청장치.response;
+	tabmenu(탭메뉴json);
+}
+
+
+
+
+function tabmenu(tabData) {
+
+	console.log(tabData);
+	
+	// 준비
+	var tabMenu = document.querySelector(".tab_menu");
+	var tabMenuLis = tabMenu.querySelectorAll("li");
+	var tabContentDivs = document.querySelectorAll(".tab_content > div");
+
+	// 확인
+
+	if (tabMenuLis.length !== tabContentDivs.length) return;
+	if (!tabData) return;
+
+	tabMenu.addEventListener('click', clickWork);
+
+	// 1.for을 돌면서 숫자를 li 노드에 num항목으로 박아둔다.
+	// 2.기존의 on을 모두 지운다.
+	// 3.클릭된 li의 num을 컨텐츠에 배열에서 찾아서 on준다.
+	// 4.해당색을 데이터에서 찾아 on준 항목에 준다.
+	
+	// 준비 1. 과 초기색 셋팅
+	for ( let i = 0; i < tabMenuLis.length; i++) {
+		tabMenuLis[i].num = i;
+		if (tabMenuLis[i].classList.contains('on')) {
+			let currentColor = tabData.tabItems[i].itemColor;
+			tabMenuLis[i].children[0].style.backgroundColor = currentColor;
+			tabContentDivs[i].style.backgroundColor = currentColor;
+		}
+	}
+
+	function clickWork(e){
+		e.preventDefault();
+		//지우기
+		for ( let i = 0; i < tabMenuLis.length; i++) {
+		tabMenuLis[i].classList.remove('on');
+		tabMenuLis[i].children[0].style.backgroundColor = '';
+		tabContentDivs[i].classList.remove('on');
+		tabContentDivs[i].style.backgroundColor = '';
+
+		}
+
+		//on주기와 색주기
+		let currentNum = e.target.parentNode.num;
+		let currentColor = tabData.tabItems[currentNum].itemColor;
+		tabMenuLis[currentNum].classList.add('on');
+		tabMenuLis[currentNum].children[0].style.backgroundColor = currentColor;
+		tabContentDivs[currentNum].classList.add('on');
+		tabContentDivs[currentNum].style.backgroundColor = currentColor;
+
+	}
+}
+
+
+
+</script>
+</body>
+</html>

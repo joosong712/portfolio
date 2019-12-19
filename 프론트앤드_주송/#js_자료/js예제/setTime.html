@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body {height:2000px;}
+    .box {width:100px; height:100px; border:1px solid black; position: relative;}
+
+    </style>
+</head>
+<body>
+<button class="start">시작</button>
+<button class="stop">멈춤</button>
+<div class="box"></div>
+
+
+<script>
+    //클릭하면 움직이게
+    //css에서 transition이 안되는 브라우저를 할때 셋타임아웃으로 사용해야 함
+    //setInterval
+    var box = document.querySelector('.box');
+    var startBtn = document.querySelector('.start');
+    var stopBtn = document.querySelector('.stop');
+
+    startBtn.addEventListener('click', startWork);
+    stopBtn.addEventListener('click', stopWork);
+
+        var move = 0;
+        var start;
+
+
+        function startWork() {
+            //requestAnimationFrame이 자동으로 시간을 맞춰서 넣어줌 (16초)
+            start = requestAnimationFrame(function() {
+                move = move + 2; //재귀함수
+                box.style.left = move + 'px';    
+                startWork();
+            });
+            
+        function stopWork(){
+            cancelAnimationFrame(start);
+            //start 애니메이션을 취소해주는 함수
+        }
+    };
+
+
+
+
+
+
+    //리사이즈 디바운싱
+    // var htmlEl = document.querySelector('html');
+    // window.addEventListener('resize', resizeWork); //resize때는 window.innerWidth
+    // var a; //실행시키기 위해 먼저 적고
+
+    // function resizeWork() {
+        
+    //     clearTimeout(a);
+    //     //지워주고 싶은 이름을 넣으면 됨
+
+    //     //할당을 한다.
+    //     a = setTimeout( function () {
+    //         console.log(window.innerWidth);            
+    //     }, 150);
+    // }
+
+
+    //스로틀링 js가 많이 붙어 있어 무거울때 필요 *면접
+    // var htmlEl = document.querySelector('html');
+    // window.addEventListener('scroll', scrollWork);
+    // var a; //실행시키기 위해 먼저 적고
+    // function scrollWork() {
+        
+    //     clearTimeout(a);
+    //     //지워주고 싶은 이름을 넣으면 됨
+
+    //     //할당을 한다.
+    //     a = setTimeout( function() {
+    //         console.log(htmlEl.scrollTop);
+    //     }, 150);
+    // }
+</script>
+</body>
+</html>
