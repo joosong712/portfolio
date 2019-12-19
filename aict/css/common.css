@@ -27,18 +27,31 @@ footer{ background: #f8f9fb;}
 /* header */
 .wrap {overflow: hidden;}
 header {position: fixed; width:100%; height:90px; background-color: white; z-index: 9999;}
-.header_wrap  {height:90px; max-width: 1150px; margin: 0 auto;}
+.header_wrap  {height:90px; max-width: 1200px; margin: 0 auto; position: relative;}
 .header_wrap::after {display: block; clear: both; content: ''; }
 .header_wrap > h1 {float: left; margin-top:27px;}
 .header_wrap > h1 > a > img {width:200px;}
-.header_wrap > nav {float: left;margin: 30px 0 0 70px;}
-.header_wrap > nav > ul > li {display: inline-block;}
-.header_wrap > nav > ul > li > a {margin: 0 8px; font-size: 20px;}
+.header_wrap > nav {float: left; margin: 30px 0 0 70px;}
+.header_wrap > nav > ul > li {display: inline-block; vertical-align: top;}
+.header_wrap > nav > ul > li > a {font-size: 20px;}
+.header_wrap > nav > ul > li + li > a {margin-left:15px;}
 .header_wrap > .utill {float: right; margin-top:25px;}
 .header_wrap > .utill > a:nth-child(2) {
     background-color: #696e6a; color:white; 
     font-size:16px; padding:6px; display: inline-block; vertical-align: top;}
-.drop_menu ul{display: none;}
+.header_wrap > nav .drop_menu > ul {position: absolute; top:90px; right:0; left:0; width:33.333333%; margin:0 auto; border:1px solid #e4e4e4;}
+.header_wrap > nav .drop_menu > ul > li > ul {border:1px solid red; position: absolute; top:90px;}
+
+.all_menu {border:1px solid #e4e4e4; position: fixed; top: 90px; left:0; right:0; background: white; z-index: 1; display: none;}
+.all_menu > ul {max-width: 1200px; margin:0 auto;}
+.all_menu > ul > li {float: left; border-left:1px solid #e4e4e4; border-right:1px solid #e4e4e4; padding:20px; width:calc(160px - 3px); height:500px;}
+.all_menu > ul > li > a {font-size:17px;}
+.all_menu > ul > li > ul {margin-top:10px;}
+
+.header_bg {position: fixed; top:90px; left:0; right:0; background: #f6f6f6; height:400px; z-index: 2; border:1px solid #e4e4e4;}
+
+
+
 
 
 /* slide */
@@ -50,7 +63,7 @@ main {padding-top:90px;}
 .slide_wrap > li .title_text > strong {font-size: 60px;}
 .slideimg div.bx-wrapper {box-shadow: none; border:none; padding:0; margin:0;}
 .slideimg div.bx-pager {display:none;}
-.slideimg div.bx-wrapper .bx-controls-direction a {height:53px; z-index: 100;}
+.slideimg div.bx-wrapper .bx-controls-direction a {height:53px; z-index: 0;}
 .slideimg div.bx-wrapper .bx-prev {background: url('../images/btn_left.png') no-repeat; left:6%;}
 .slideimg .bx-wrapper img {width:100%;}
 .slideimg div.bx-wrapper .bx-prev:hover {background-position: unset;}
@@ -64,6 +77,26 @@ main {padding-top:90px;}
 .news > p {float: left; font-size: 25px; margin-right: 120px;}
 .news > .news_text {float: left; width:800px; line-height: 30px;}
 .news > .news_text > .data {float: right;}
+.news > .news_text > .open {position: absolute; top: 50%; right: 40px; transform: translateY(-50%);}
+
+.news_up {position: absolute; bottom:0; background: rgba(255, 255, 255, 0.8); left:50%; transform: translateX(-50%); width:1120px; padding:55px 40px 25px; display: none;}
+.news_up .left {float: left; width:250px;}
+.news_up .left > p {font-size:16px;}
+.news_up .left > strong {font-size:35px;}
+.news_up .bx-wrapper {float: left; max-width:870px; background: none;}
+.news_up div.bx-wrapper .bx-controls-direction a {left:-250px;}
+.news_up div.bx-wrapper .bx-prev {background:url('../images/bx-controls-btn.png') no-repeat top left;}
+.news_up div.bx-wrapper .bx-next {background:url('../images/bx-controls-btn.png') no-repeat top right;}
+.news_up .bx-controls-auto {display: none;}
+.news_up .bx-viewport .right > li {width:800px;}
+.news_up .right > li > a {width:230px; float: left; margin-left:35px; margin-bottom:30px;}
+.news_up .right > li > a:nth-child(3n+1) {margin:0;}
+.news_up .right > li > a > span:nth-child(3) {display: block; margin-top:15px;}
+.news_up .close {position: absolute; top:30px; right:30px;}
+.news_up::after {display:block; content: ''; clear: both;}
+
+
+
 
 /* section1 */
 .section1 {border:1px solid #cecece; width: 1200px; margin: 50px auto;}
@@ -267,7 +300,7 @@ footer {background-color:white;}
     .bottom div.bx-wrapper {right:50px;}
 }
 
-@media screen and (min-width:320px) and (max-width: 1072px) {
+@media screen and (min-width:320px) and (max-width: 1000px) {
     .slide_wrap > li .title_text > p {font-size:25px;}
     .slide_wrap > li .title_text > strong {font-size:25px;}
     .header_wrap > nav {display: none;}
